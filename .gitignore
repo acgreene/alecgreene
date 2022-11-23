@@ -1,0 +1,10 @@
+.eslintignore
+.eslintrc
+.prettierrc
+.env
+nodemon.json
+package-lock.json
+tslint.json
+
+node_modules/
+build/

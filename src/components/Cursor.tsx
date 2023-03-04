@@ -54,7 +54,7 @@ const Cursor = () => {
         className={`absolute items-center justify-center hidden sm:flex z-10`}
         style={{ left: cursorPos.left, top: cursorPos.top }}
       >
-        <div className="absolute bg-slate-50 w-1 h-1 rounded-full"></div>
+        <div className="absolute bg-slate-50 w-2 h-2 rounded-full"></div>
       </div>
 
       <div
@@ -62,10 +62,10 @@ const Cursor = () => {
         ref={cursorRef}
       >
         <div
-          className="absolute w-8 h-8 rounded-full"
+          className="absolute w-10 h-10 rounded-full"
           ref={outerCircleRef}
         ></div>
-        <div className="absolute bg-black w-7 h-7 rounded-full"></div>
+        <div className="absolute bg-black w-9 h-9 rounded-full"></div>
       </div>
     </>
   );

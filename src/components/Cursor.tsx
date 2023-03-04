@@ -8,8 +8,11 @@ interface CursorPosition {
 }
 
 const Cursor = () => {
-  // initialize reference to cursor and variable to store position
+  // references to DOM objects for GSAP
   const cursorRef = useRef<HTMLDivElement>(null);
+  const outerCircleRef = useRef<HTMLDivElement>(null);
+
+  // states to store cursor movement
   const [cursorPos, setCursorPos] = useState<CursorPosition>({
     left: 0,
     top: 0,
@@ -37,6 +40,14 @@ const Cursor = () => {
     });
   }, [cursorPos]);
 
+  useEffect(() => {
+    gsap.to(outerCircleRef.current, {
+      backgroundColor: `rgb(${cursorPos.left / 3}, ${
+        cursorPos.top / 2
+      }, ${255})`,
+    });
+  });
+
   return (
     <>
       <div
@@ -50,8 +61,11 @@ const Cursor = () => {
         className={`absolute items-center justify-center hidden sm:flex z-0`}
         ref={cursorRef}
       >
-        <div className="absolute bg-slate-50 w-6 h-6 rounded-full"></div>
-        <div className="absolute bg-black w-5 h-5 rounded-full"></div>
+        <div
+          className="absolute w-8 h-8 rounded-full"
+          ref={outerCircleRef}
+        ></div>
+        <div className="absolute bg-black w-7 h-7 rounded-full"></div>
       </div>
     </>
   );

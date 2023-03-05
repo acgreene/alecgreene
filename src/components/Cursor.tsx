@@ -27,17 +27,31 @@ const Cursor = () => {
   });
 
   useEffect(() => {
+    let mouseLeft: number,
+      mouseTop: number = 0;
+
     const handleCursorMove = (e: any) => {
+      mouseLeft = e.clientX;
+      mouseTop = e.clientY;
       setCursorPos({
-        left: e.clientX,
-        top: e.clientY,
+        left: mouseLeft,
+        top: mouseTop + window.scrollY,
+      });
+    };
+
+    const handleCursorScroll = (e: any) => {
+      setCursorPos({
+        left: mouseLeft,
+        top: mouseTop + window.scrollY,
       });
     };
 
     window.addEventListener("mousemove", handleCursorMove);
+    window.addEventListener("scroll", handleCursorScroll);
 
     return () => {
       window.removeEventListener("mousemove", handleCursorMove);
+      window.removeEventListener("scroll", handleCursorScroll);
     };
   }, []);
 

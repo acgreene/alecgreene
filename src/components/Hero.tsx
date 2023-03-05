@@ -3,7 +3,7 @@ import { IMG_0001, IMG_0002, IMG_0003, IMG_0004 } from "../assets";
 
 const Hero = () => {
   return (
-    <div className="z-0 relative flex flex-col justify-center items-center w-full h-100 p-2 mt-20 md:flex-row md:mt-40">
+    <div className="relative flex flex-col justify-center items-center w-full h-100 p-2 mt-20 md:flex-row md:mt-40">
       <div className="flex-col items-center text-white m-10">
         <h1 className="text-9xl">Hello, I'm Alec Greene. </h1>
         {/* <h2 className="text-3xl"></h2> */}

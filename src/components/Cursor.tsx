@@ -77,8 +77,8 @@ const Cursor = () => {
 
     // outer ring color change
     gsap.to(outerCircleRef.current, {
-      backgroundColor: `rgb(${cursorPos.left / 3}, ${
-        cursorPos.top / 2
+      backgroundColor: `rgb(${cursorPos.left / 9}, ${
+        cursorPos.top / 6
       }, ${255})`,
     });
 
@@ -102,8 +102,8 @@ const Cursor = () => {
         duration: 0.1,
       });
       gsap.to(centerCircleRef2.current, {
-        borderBottom: `solid 14px rgb(${cursorPos.left / 3}, ${
-          cursorPos.top / 2
+        borderBottom: `solid 14px rgb(${cursorPos.left / 9}, ${
+          cursorPos.top / 6
         }, ${255})`,
         borderLeft: "solid 6px transparent",
         borderRight: "solid 6px transparent",
@@ -125,13 +125,16 @@ const Cursor = () => {
         duration: 0.1,
       });
       gsap.to(centerCircleRef.current, {
-        scale: 1,
+        borderBottom: "solid 18px black",
+        borderLeft: "solid 8px transparent",
+        borderRight: "solid 8px transparent",
         duration: 0.1,
+        scale: 1,
       });
       gsap.to(centerCircleRef2.current, {
         scale: 1,
-        borderBottom: `solid 14px rgb(${cursorPos.left / 3}, ${
-          cursorPos.top / 2
+        borderBottom: `solid 14px rgb(${cursorPos.left / 9}, ${
+          cursorPos.top / 6
         }, ${255})`,
         borderLeft: "solid 6px transparent",
         borderRight: "solid 6px transparent",
@@ -171,13 +174,13 @@ const Cursor = () => {
   let cursorRotation = "-25deg";
 
   return (
-    <div className="z-20">
+    <div className="pointer-events-none">
       <div
-        className={`absolute items-center justify-center hidden sm:flex z-20`}
+        className={`absolute items-center justify-center hidden sm:flex pointer-events-none`}
         style={{ left: cursorPos.left, top: cursorPos.top }}
       >
         <div
-          className="absolute"
+          className="absolute z-40 pointer-events-none"
           ref={centerCircleRef}
           style={{
             background: "transparent",
@@ -188,7 +191,7 @@ const Cursor = () => {
           }}
         ></div>
         <div
-          className="absolute"
+          className="absolute z-40 pointer-events-none"
           ref={centerCircleRef2}
           style={{
             background: "transparent",
@@ -202,12 +205,15 @@ const Cursor = () => {
       </div>
 
       <div
-        className={`absolute items-center justify-center hidden sm:flex z-10`}
+        className={`absolute items-center justify-center hidden sm:flex z-10 pointer-events-none`}
         ref={cursorRef}
       >
-        <div className="absolute rounded-full" ref={outerCircleRef}></div>
         <div
-          className="absolute bg-black rounded-full"
+          className="absolute rounded-full pointer-events-none"
+          ref={outerCircleRef}
+        ></div>
+        <div
+          className="absolute bg-black rounded-full pointer-events-none"
           ref={innerCircleRef}
         ></div>
       </div>

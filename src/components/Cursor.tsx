@@ -49,7 +49,7 @@ const Cursor = () => {
   });
 
   return (
-    <>
+    <div className="z-10">
       <div
         className={`absolute items-center justify-center hidden sm:flex z-10`}
         style={{ left: cursorPos.left, top: cursorPos.top }}
@@ -67,7 +67,7 @@ const Cursor = () => {
         ></div>
         <div className="absolute bg-black w-9 h-9 rounded-full"></div>
       </div>
-    </>
+    </div>
   );
 };
 

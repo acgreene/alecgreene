@@ -16,7 +16,7 @@ function App() {
         </div>
       </div>
 
-      <div className="bg-primary flex justify-center items-start">
+      <div className="flex justify-center items-start">
         <div className="xl:max-w-[1280px] w-full">
           <Hero />
         </div>

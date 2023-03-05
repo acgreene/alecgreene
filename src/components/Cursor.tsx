@@ -104,9 +104,9 @@ const Cursor = () => {
   let cursorRotation = "-25deg";
 
   return (
-    <div className="z-10">
+    <div className="z-20">
       <div
-        className={`absolute items-center justify-center hidden sm:flex z-10`}
+        className={`absolute items-center justify-center hidden sm:flex z-20`}
         style={{ left: cursorPos.left, top: cursorPos.top }}
       >
         <div
@@ -135,7 +135,7 @@ const Cursor = () => {
       </div>
 
       <div
-        className={`absolute items-center justify-center hidden sm:flex z-0`}
+        className={`absolute items-center justify-center hidden sm:flex z-10`}
         ref={cursorRef}
       >
         <div className="absolute rounded-full" ref={outerCircleRef}></div>

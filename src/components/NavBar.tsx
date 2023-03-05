@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { useRecoilState } from "recoil";
+import { cursorState } from "../recoil/atoms";
 import { menu, close } from "../assets";
 import { navLinks } from "../constants";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState<Boolean>(false);
+
+  // recoil
+  const [active, setActive] = useRecoilState(cursorState);
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar z-40">
@@ -14,6 +19,8 @@ const NavBar = () => {
             key={nav.id}
             className={`font-normal text-[16px] z-40
               ${index == navLinks.length - 1 ? "mr-0" : "mr-10"} text-white`}
+            onMouseEnter={() => setActive(true)}
+            onMouseLeave={() => setActive(false)}
           >
             <a href={`#${nav.id}`} className="cursor-none">
               {nav.title}

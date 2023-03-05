@@ -15,6 +15,7 @@ const Cursor = () => {
   const outerCircleRef = useRef<HTMLDivElement>(null);
   const innerCircleRef = useRef<HTMLDivElement>(null);
   const centerCircleRef = useRef<HTMLDivElement>(null);
+  const centerCircleRef2 = useRef<HTMLDivElement>(null);
 
   // TO DO: read whether cursor is in active state from recoil.
   const isCursorActive = useRecoilValue(cursorState);
@@ -54,35 +55,53 @@ const Cursor = () => {
       }, ${255})`,
     });
 
+    let timeToActive = 0.1;
+
     // inner circle blow up
     if (isCursorActive) {
+      // active
       gsap.to(innerCircleRef.current, {
         height: "0px",
         width: "0px",
+        duration: timeToActive,
       });
       gsap.to(outerCircleRef.current, {
-        height: "72px",
-        width: "72px",
+        height: "92px",
+        width: "92px",
       });
       gsap.to(centerCircleRef.current, {
-        backgroundColor: "rgb(0 0 0)",
-        opacity: 0,
+        scale: 0,
+        duration: 0.1,
       });
-    } else {
+      gsap.to(centerCircleRef2.current, {
+        scale: 0,
+        duration: 0.1,
+      });
+    }
+
+    // normal
+    else {
       gsap.to(innerCircleRef.current, {
-        height: "36px",
-        width: "36px",
+        height: "58px",
+        width: "58px",
+        duration: timeToActive,
       });
       gsap.to(outerCircleRef.current, {
-        height: "40px",
-        width: "40px",
+        height: "64px",
+        width: "64px",
       });
       gsap.to(centerCircleRef.current, {
-        backgroundColor: "rgb(248 250 252)",
-        opacity: 1,
+        scale: 1,
+        duration: 0.1,
+      });
+      gsap.to(centerCircleRef2.current, {
+        scale: 1,
+        duration: 0.1,
       });
     }
   }, [cursorPos]);
+
+  let cursorRotation = "-25deg";
 
   return (
     <div className="z-10">
@@ -91,8 +110,27 @@ const Cursor = () => {
         style={{ left: cursorPos.left, top: cursorPos.top }}
       >
         <div
-          className="absolute h-2 w-2 rounded-full"
+          className="absolute"
           ref={centerCircleRef}
+          style={{
+            background: "transparent",
+            borderBottom: "solid 18px rgb(255, 255, 255)",
+            borderLeft: "solid 8px transparent",
+            borderRight: "solid 8px transparent",
+            rotate: `${cursorRotation}`,
+          }}
+        ></div>
+        <div
+          className="absolute"
+          ref={centerCircleRef2}
+          style={{
+            background: "transparent",
+            borderBottom: "solid 14px rgb(0, 0, 0)",
+            borderLeft: "solid 6px transparent",
+            borderRight: "solid 6px transparent",
+            transform: "translate(0px, 6px)",
+            rotate: `${cursorRotation}`,
+          }}
         ></div>
       </div>
 

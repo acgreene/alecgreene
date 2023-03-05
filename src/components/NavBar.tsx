@@ -11,13 +11,13 @@ const NavBar = () => {
   const [active, setActive] = useRecoilState(cursorState);
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar z-40">
+    <nav className="w-full flex py-6 justify-between items-center navbar z-30">
       {/* laptop nav bar */}
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-normal text-[16px] z-40
+            className={`font-normal text-[16px] z-30
               ${index == navLinks.length - 1 ? "mr-0" : "mr-10"} text-white`}
             onMouseEnter={() => setActive(true)}
             onMouseLeave={() => setActive(false)}

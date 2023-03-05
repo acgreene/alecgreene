@@ -25,6 +25,7 @@ const Cursor = () => {
     left: 0,
     top: 0,
   });
+  const [isPressing, setIsPressing] = useState<boolean>(false);
 
   useEffect(() => {
     let mouseLeft: number,
@@ -46,12 +47,24 @@ const Cursor = () => {
       });
     };
 
+    const handleMouseDown = (e: any) => {
+      setIsPressing(true);
+    };
+
+    const handleMouseUp = (e: any) => {
+      setIsPressing(false);
+    };
+
     window.addEventListener("mousemove", handleCursorMove);
     window.addEventListener("scroll", handleCursorScroll);
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
       window.removeEventListener("mousemove", handleCursorMove);
       window.removeEventListener("scroll", handleCursorScroll);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
 
@@ -71,8 +84,35 @@ const Cursor = () => {
 
     let timeToActive = 0.1;
 
+    if (isPressing) {
+      gsap.to(innerCircleRef.current, {
+        height: "0px",
+        width: "0px",
+        duration: timeToActive,
+      });
+      gsap.to(outerCircleRef.current, {
+        height: "32px",
+        width: "32px",
+        duration: 0.1,
+      });
+      gsap.to(centerCircleRef.current, {
+        borderBottom: "solid 18px black",
+        borderLeft: "solid 8px transparent",
+        borderRight: "solid 8px transparent",
+        duration: 0.1,
+      });
+      gsap.to(centerCircleRef2.current, {
+        borderBottom: `solid 14px rgb(${cursorPos.left / 3}, ${
+          cursorPos.top / 2
+        }, ${255})`,
+        borderLeft: "solid 6px transparent",
+        borderRight: "solid 6px transparent",
+        duration: 0.1,
+      });
+    }
+
     // inner circle blow up
-    if (isCursorActive) {
+    else if (isCursorActive && isPressing === false) {
       // active
       gsap.to(innerCircleRef.current, {
         height: "0px",
@@ -82,13 +122,19 @@ const Cursor = () => {
       gsap.to(outerCircleRef.current, {
         height: "92px",
         width: "92px",
+        duration: 0.1,
       });
       gsap.to(centerCircleRef.current, {
-        scale: 0,
+        scale: 1,
         duration: 0.1,
       });
       gsap.to(centerCircleRef2.current, {
-        scale: 0,
+        scale: 1,
+        borderBottom: `solid 14px rgb(${cursorPos.left / 3}, ${
+          cursorPos.top / 2
+        }, ${255})`,
+        borderLeft: "solid 6px transparent",
+        borderRight: "solid 6px transparent",
         duration: 0.1,
       });
     }
@@ -103,17 +149,24 @@ const Cursor = () => {
       gsap.to(outerCircleRef.current, {
         height: "64px",
         width: "64px",
+        duration: 0.1,
       });
       gsap.to(centerCircleRef.current, {
         scale: 1,
+        borderBottom: "solid 18px white",
+        borderLeft: "solid 8px transparent",
+        borderRight: "solid 8px transparent",
         duration: 0.1,
       });
       gsap.to(centerCircleRef2.current, {
         scale: 1,
+        borderBottom: `solid 14px black`,
+        borderLeft: "solid 6px transparent",
+        borderRight: "solid 6px transparent",
         duration: 0.1,
       });
     }
-  }, [cursorPos]);
+  }, [cursorPos, isPressing]);
 
   let cursorRotation = "-25deg";
 

@@ -11,22 +11,22 @@ import Portfolio from "./components/Portfolio";
 
 function App() {
   return (
-    <div className="bg-black overflow-hidden relative top-0 left-0 w-screen h-screen cursor-default sm:cursor-none">
+    <div className="bg-black relative top-0 left-0 w-full overflow-hidden sm:cursor-none">
       <Cursor />
 
-      <div className="sm:px-16 px-6 flex justify-center items-center">
+      <div className="bg-black sm:px-16 px-6 flex justify-center items-center">
         <div className="xl:max-w-[1280px] w-full">
           <NavBar />
         </div>
       </div>
 
-      <div className="flex justify-center items-start">
+      <div className="bg-black flex justify-center items-start">
         <div className="xl:max-w-[1280px] w-full">
           <Hero />
         </div>
       </div>
 
-      <div className="sm:px-16 px-6 flex justify-center items-start">
+      <div className="bg-black sm:px-16 px-6 flex justify-center items-start">
         <div className="xl:max-w-[1280px] w-full">
           <About />
           <Portfolio />

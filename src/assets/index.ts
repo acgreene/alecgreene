@@ -8,6 +8,7 @@ import IMG_0001 from "./photos/IMG_0001.png";
 import IMG_0002 from "./photos/IMG_0002.png";
 import IMG_0003 from "./photos/IMG_0003.png";
 import IMG_0004 from "./photos/IMG_0004.jpg";
+import disto from "./disto.png";
 
 export {
   menu,
@@ -20,4 +21,5 @@ export {
   IMG_0002, 
   IMG_0003, 
   IMG_0004,
+  disto
 };

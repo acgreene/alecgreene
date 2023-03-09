@@ -19,9 +19,9 @@
 .marquee-inner {
     display: block;
     width: 200%;
-    margin: 70px 0;
+    /* margin: 70px 0; */
     position: absolute;
-    animation: marquee 10s linear infinite;
+    animation: marquee 20s linear infinite;
 }
 
 .marquee-inner:hover {

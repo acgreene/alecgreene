@@ -41,16 +41,23 @@ const Marquee = () => {
       ee.push(tech);
     }
   });
+
+  let outerDiv =
+    "flex flex-col justify-center items-center border-solid border-x border-y border-white w-80";
+  let titleText = "text-white text-center font-thin text-3xl";
+  let mapContainer = "flex flex-row mt-5";
+  let iconDiv = "w-full flex mr-4 ml-4";
+
   return (
     <ul className="float-left w-1/2 flex flex-row">
       {/* plugins */}
-      <div>
-        <h1>Audio plug-in development</h1>
-        <div>
+      <div className={outerDiv}>
+        <h1 className={titleText}>Audio plug-in development</h1>
+        <div className={mapContainer}>
           {plugins.map((tech) => {
             if (tech.group === "plugins") {
               return (
-                <div key={tech.id} className="font-normal w-full flex">
+                <div key={tech.id} className={iconDiv}>
                   <a
                     href={`${tech.link}`}
                     className="z-10 cursor-none w-16"
@@ -68,13 +75,13 @@ const Marquee = () => {
       </div>
 
       {/* mixing */}
-      <div>
-        <h1>Audio recording, mixing</h1>
-        <div>
+      <div className={outerDiv}>
+        <h1 className={titleText}>Audio recording, mixing</h1>
+        <div className={mapContainer}>
           {mixing.map((tech) => {
             if (tech.group === "mixing") {
               return (
-                <div key={tech.id} className="font-normal w-full flex">
+                <div key={tech.id} className={iconDiv}>
                   <a
                     href={`${tech.link}`}
                     className="z-10 cursor-none w-16"
@@ -92,13 +99,13 @@ const Marquee = () => {
       </div>
 
       {/* automation */}
-      <div>
-        <h1>Automation, scripting</h1>
-        <div>
+      <div className={outerDiv}>
+        <h1 className={titleText}>Automation, scripting</h1>
+        <div className={mapContainer}>
           {automation.map((tech) => {
             if (tech.group === "automation") {
               return (
-                <div key={tech.id} className="font-normal w-full flex">
+                <div key={tech.id} className={iconDiv}>
                   <a
                     href={`${tech.link}`}
                     className="z-10 cursor-none w-16"
@@ -116,13 +123,13 @@ const Marquee = () => {
       </div>
 
       {/* data */}
-      <div>
-        <h1>Data</h1>
-        <div>
+      <div className={outerDiv}>
+        <h1 className={titleText}>Data</h1>
+        <div className={mapContainer}>
           {data.map((tech) => {
             if (tech.group === "data") {
               return (
-                <div key={tech.id} className="font-normal w-full flex">
+                <div key={tech.id} className={iconDiv}>
                   <a
                     href={`${tech.link}`}
                     className="z-10 cursor-none w-16"
@@ -140,13 +147,13 @@ const Marquee = () => {
       </div>
 
       {/* frontend */}
-      <div>
-        <h1>Front-end development</h1>
-        <div>
+      <div className={outerDiv}>
+        <h1 className={titleText}>Front-end development</h1>
+        <div className={mapContainer}>
           {frontend.map((tech) => {
             if (tech.group === "frontend") {
               return (
-                <div key={tech.id} className="font-normal w-full flex">
+                <div key={tech.id} className={iconDiv}>
                   <a
                     href={`${tech.link}`}
                     className="z-10 cursor-none w-16"
@@ -164,13 +171,13 @@ const Marquee = () => {
       </div>
 
       {/* backend */}
-      <div>
-        <h1>Back-end development</h1>
-        <div>
+      <div className={outerDiv}>
+        <h1 className={titleText}>Back-end development</h1>
+        <div className={mapContainer}>
           {backend.map((tech) => {
             if (tech.group === "backend") {
               return (
-                <div key={tech.id} className="font-normal w-full flex">
+                <div key={tech.id} className={iconDiv}>
                   <a
                     href={`${tech.link}`}
                     className="z-10 cursor-none w-16"
@@ -188,13 +195,13 @@ const Marquee = () => {
       </div>
 
       {/* ee */}
-      <div>
-        <h1>Schematics, PCBs</h1>
-        <div>
+      <div className={outerDiv}>
+        <h1 className={titleText}>Schematics, PCBs</h1>
+        <div className={mapContainer}>
           {ee.map((tech) => {
             if (tech.group === "ee") {
               return (
-                <div key={tech.id} className="font-normal w-full flex">
+                <div key={tech.id} className={iconDiv}>
                   <a
                     href={`${tech.link}`}
                     className="z-10 cursor-none w-16"

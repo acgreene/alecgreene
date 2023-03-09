@@ -11,7 +11,7 @@ import Portfolio from "./components/Portfolio";
 
 function App() {
   return (
-    <div className="bg-black relative top-0 left-0 w-full overflow-hidden sm:cursor-none">
+    <div className="bg-black relative top-0 left-0 w-full overflow-hidden sm:cursor-none select-none">
       <Cursor />
 
       <div className="bg-black sm:px-16 px-6 flex justify-center items-center">

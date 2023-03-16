@@ -1,22 +1,26 @@
-import React from "react";
+import { SimpleGrid } from "@chakra-ui/react";
 import { useRecoilState } from "recoil";
-import {
-  react,
-  typescript,
-  tailwind,
-  cpp,
-  expressjs,
-  juce,
-  mongodb,
-  nodejs,
-  python,
-  ableton,
-  logicpro,
-  cubase,
-  kicad,
-} from "../assets";
 import { cursorState } from "../recoil/atoms";
-import Marquee from "./Marquee";
+import {
+  SiTypescript,
+  SiReact,
+  SiTailwindcss,
+  SiChakraui,
+  SiGreensock,
+  SiTsnode,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
+  SiMysql,
+  SiPython,
+  SiCplusplus,
+  SiAbletonlive,
+  SiProtools,
+  SiKicad,
+  SiAltiumdesigner,
+} from "react-icons/si";
+import { useState } from "react";
+import ExplorationCard from "./ExplorationCard";
 
 const About = () => {
   const [active, setActive] = useRecoilState(cursorState);
@@ -35,12 +39,48 @@ const About = () => {
       <div className="mt-10 mb-10 w-full">
         <span className="text-5xl">explorations</span>
         <div className="w-100 h-px mt-5 mb-5 bg-white"></div>
-        <div className="marquee">
-          <div className="marquee-inner">
-            <Marquee />
-            <Marquee />
-          </div>
-        </div>
+        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing="40px">
+          <ExplorationCard
+            title="recording, mixing"
+            icons={[SiAbletonlive, SiProtools]}
+          ></ExplorationCard>
+
+          <ExplorationCard
+            title="front end dev"
+            icons={[
+              SiTypescript,
+              SiReact,
+              SiTailwindcss,
+              SiChakraui,
+              SiGreensock,
+            ]}
+          ></ExplorationCard>
+
+          <ExplorationCard
+            title="scripting"
+            icons={[SiPython]}
+          ></ExplorationCard>
+
+          <ExplorationCard
+            title="schematics, pcbs"
+            icons={[SiKicad, SiAltiumdesigner]}
+          ></ExplorationCard>
+
+          <ExplorationCard
+            title="back end dev"
+            icons={[SiTsnode, SiExpress]}
+          ></ExplorationCard>
+
+          <ExplorationCard
+            title="databases"
+            icons={[SiMongodb, SiFirebase, SiMysql]}
+          ></ExplorationCard>
+
+          <ExplorationCard
+            title="audio plugin dev"
+            icons={[SiCplusplus]}
+          ></ExplorationCard>
+        </SimpleGrid>
       </div>
     </div>
   );

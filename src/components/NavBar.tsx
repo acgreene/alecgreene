@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { cursorState } from "../recoil/atoms";
 import { menu, close } from "../assets";
@@ -12,21 +12,48 @@ const NavBar = () => {
 
   let fontSize = "text-[22px]";
 
+  const [scrollPos, setScrollPos] = useState(0);
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrollPos(window.scrollY);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollPos]);
+
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar z-30">
-      {/* <h1 className={`font-normal ${fontSize} text-white z-30`}>alecGreene</h1> */}
+    <>
+      <div
+        className="
+          w-full hidden py-10 top-0 right-0 fixed
+          sm:pr-0 sm:justify-center sm:flex
+          md:pr-12
+          lg:pr-20"
+        style={{
+          zIndex: "19",
+          backgroundColor: `rgb(${scrollPos / 25}, ${scrollPos / 50}, ${
+            scrollPos / 10
+          })`,
+        }}
+      ></div>
 
       {/* laptop nav bar */}
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+      <ul
+        className="
+          w-full py-6 top-0 right-0 fixed list-none hidden items-center flex-1 z-30
+          sm:pr-0 sm:justify-center sm:flex
+          md:pr-20 md:justify-end"
+      >
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-normal ${fontSize} z-30
+            className={`font-normal ${fontSize}
               ${index == navLinks.length - 1 ? "mr-0" : "mr-10"} text-white`}
             onMouseEnter={() => setActive(true)}
             onMouseLeave={() => setActive(false)}
           >
-            <a href={`#${nav.id}`} className="cursor-none">
+            <a href={`#${nav.id}`} className="cursor-none relative">
               {nav.title}
             </a>
           </li>
@@ -34,7 +61,7 @@ const NavBar = () => {
       </ul>
 
       {/* list of items only for mobile devices */}
-      <div className="sm:hidden flex flex-1 justify-end items-center">
+      <div className="sm:hidden flex flex-1 justify-end items-center z-30">
         <img
           src={toggle ? close : menu}
           alt="menu"
@@ -52,7 +79,7 @@ const NavBar = () => {
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
-                className={`font-normal text-[16px] z-40
+                className={`font-normal text-[16px]
                     ${
                       index == navLinks.length - 1 ? "mr-0" : "mb-4"
                     } text-white`}
@@ -63,7 +90,7 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 export default NavBar;

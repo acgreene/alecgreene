@@ -14,10 +14,8 @@ function App() {
     <div className="bg-black relative top-0 left-0 w-full overflow-hidden sm:cursor-none select-none">
       <Cursor />
 
-      <div className="bg-black sm:px-16 px-6 flex justify-center items-center">
-        <div className="xl:max-w-[1280px] w-full">
-          <NavBar />
-        </div>
+      <div className="xl:max-w-[1280px] w-full">
+        <NavBar />
       </div>
 
       <div className="bg-black flex justify-center items-start">

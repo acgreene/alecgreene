@@ -205,7 +205,7 @@ const Cursor = () => {
       </div>
 
       <div
-        className={`absolute items-center justify-center hidden sm:flex z-10 pointer-events-none`}
+        className={`absolute items-center justify-center hidden sm:flex z-20 pointer-events-none`}
         ref={cursorRef}
       >
         <div

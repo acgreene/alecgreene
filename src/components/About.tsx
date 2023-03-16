@@ -28,11 +28,21 @@ const About = () => {
   return (
     <div className="flex justify-center items-center h-100 flex-row flex-wrap sm:mb-20 mb-6 text-white">
       <div className="mt-10 mb-10">
-        <p className="font-thin text-5xl">
+        <p
+          className="
+        font-thin text-5xl
+        sm:text-center mb-80
+        md:text-left md:mb-96
+        "
+        >
           endlessly learning, <br />
+          <br />
           inpired through technical and creative mediums, <br />
-          engineering for work <br />
+          <br />
+          engineering for work, <br />
+          <br />
           and for fun. <br />
+          <br />
         </p>
       </div>
 

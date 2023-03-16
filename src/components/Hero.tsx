@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
 import { IMG_0001, IMG_0002, IMG_0003, IMG_0004 } from "../assets";
+import { windowScroll } from "../recoil/atoms";
 
 const Hero = () => {
+  const [yScroll, setYScroll] = useRecoilState(windowScroll);
   return (
     <div
       className="
         relative flex flex-col justify-center items-center w-full h-100 p-2  
         xs:mb-40 xs:mt-24
-        sm:mb-80 sm:mt-14
-        md:flex-row md:mt-44 md:mb-96
+        sm:mb-80 sm:mt-28
+        md:flex-row md:mt-64 md:mb-96
         lg:flex-row"
     >
       <div className="flex-col items-center text-white m-10">

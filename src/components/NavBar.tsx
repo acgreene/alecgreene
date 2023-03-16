@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { cursorState } from "../recoil/atoms";
+import { cursorState, windowScroll } from "../recoil/atoms";
 import { menu, close } from "../assets";
 import { navLinks } from "../constants";
 
@@ -12,7 +12,7 @@ const NavBar = () => {
 
   let fontSize = "text-[22px]";
 
-  const [scrollPos, setScrollPos] = useState(0);
+  const [scrollPos, setScrollPos] = useRecoilState(windowScroll);
 
   useEffect(() => {
     function handleScroll() {

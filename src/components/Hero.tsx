@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { IMG_0001, IMG_0002, IMG_0003, IMG_0004 } from "../assets";
+import { IMG_0003 } from "../assets";
 import { windowScroll } from "../recoil/atoms";
 
 const Hero = () => {

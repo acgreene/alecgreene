@@ -1,8 +1,6 @@
 import React from "react";
 
-type PortfolioProps = {};
-
-const Portfolio: React.FC<PortfolioProps> = () => {
-  return <div>Have a good coding</div>;
+const Portfolio = () => {
+  return <div id="portfolio">PORTFOLIO</div>;
 };
 export default Portfolio;

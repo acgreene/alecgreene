@@ -1,8 +1,6 @@
 import React from "react";
 
-type ContactProps = {};
-
-const Contact: React.FC<ContactProps> = () => {
-  return <div>Have a good coding</div>;
+const Contact = () => {
+  return <div id="contact">CONTACT</div>;
 };
 export default Contact;

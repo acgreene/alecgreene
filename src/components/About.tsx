@@ -1,6 +1,6 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import { useRecoilState } from "recoil";
-import { cursorState } from "../recoil/atoms";
+import { cursorState, windowScroll } from "../recoil/atoms";
 import {
   SiTypescript,
   SiReact,
@@ -19,14 +19,15 @@ import {
   SiKicad,
   SiAltiumdesigner,
 } from "react-icons/si";
-import { useState } from "react";
+import { useEffect } from "react";
 import ExplorationCard from "./ExplorationCard";
 
 const About = () => {
-  const [active, setActive] = useRecoilState(cursorState);
-
   return (
-    <div className="flex justify-center items-center h-100 flex-row flex-wrap sm:mb-20 mb-6 text-white">
+    <div
+      id="about"
+      className="flex justify-center items-center h-100 flex-row flex-wrap sm:mb-20 mb-6 text-white"
+    >
       <div className="mt-10 mb-10">
         <p
           className="

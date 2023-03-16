@@ -4,7 +4,8 @@ import { IMG_0001, IMG_0002, IMG_0003, IMG_0004 } from "../assets";
 import { windowScroll } from "../recoil/atoms";
 
 const Hero = () => {
-  const [yScroll, setYScroll] = useRecoilState(windowScroll);
+  const [scrollPos, setScrollPos] = useRecoilState(windowScroll);
+
   return (
     <div
       className="
@@ -13,6 +14,10 @@ const Hero = () => {
         sm:mb-80 sm:mt-28
         md:flex-row md:mt-64 md:mb-96
         lg:flex-row"
+      style={{
+        // for small screens: when scrollPos=600 start fading. when scrollPos=780 should be gone
+        opacity: `${scrollPos > 400 ? 1 - (scrollPos - 400) / (780 - 400) : 1}`,
+      }}
     >
       <div className="flex-col items-center text-white m-10">
         <h1

@@ -132,7 +132,7 @@ const About = () => {
             <div className="flex flex-row my-4">
               <div className="relative flex flex-col items-center mr-4 mt-1">
                 <div className="flex items-center justify-center h-4 w-4 rounded-full bg-white z-10"></div>
-                <div className="absolute w-px bg-white h-32 xxs:h-28"></div>
+                <div className="absolute w-px bg-white h-40 xxs:h-28"></div>
               </div>
               <span className="mr-8 w-24">2023-Present</span>
               <div className="w-40">
@@ -149,7 +149,7 @@ const About = () => {
                     style={{ width: "14px", height: "14px" }}
                   ></div>
                 </div>
-                <div className="absolute w-px bg-white h-32"></div>
+                <div className="absolute w-px bg-white h-40 xxs:h-32"></div>
               </div>
               <span className="mr-8 w-24">2023-Present</span>
               <div className="w-40">
@@ -166,7 +166,7 @@ const About = () => {
                     style={{ width: "14px", height: "14px" }}
                   ></div>
                 </div>
-                <div className="absolute w-px bg-white h-32"></div>
+                <div className="absolute w-px bg-white h-44 xxs:h-32"></div>
               </div>
               <span className="mr-8 w-24">2022</span>
               <div className="w-40">
@@ -183,7 +183,7 @@ const About = () => {
                     style={{ width: "14px", height: "14px" }}
                   ></div>
                 </div>
-                <div className="absolute w-px bg-white h-32 xxs:h-28"></div>
+                <div className="absolute w-px bg-white h-40 xxs:h-28"></div>
               </div>
               <span className="mr-8 w-24">2020-2023</span>
               <div className="w-40">

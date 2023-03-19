@@ -123,7 +123,7 @@ const About = () => {
               <span className="mr-8 w-24">2016-2022</span>
               <div className="w-40">
                 <h2 className="font-bold">University of Michigan</h2>
-                <h2 className="text-gray-200">B.S Sound Engineering</h2>
+                <h2 className="text-gray-200">B.S. Sound Engineering</h2>
               </div>
             </div>
           </div>
@@ -185,7 +185,7 @@ const About = () => {
                 </div>
                 <div className="absolute w-px bg-white h-40 xxs:h-28"></div>
               </div>
-              <span className="mr-8 w-24">2020-2023</span>
+              <span className="mr-8 w-24">2020-2022</span>
               <div className="w-40">
                 <h2 className="font-bold">Technology Consultant</h2>
                 <h2 className="text-gray-200">University of Michigan</h2>

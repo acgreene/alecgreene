@@ -21,6 +21,7 @@ import ableton from "./ableton.png";
 import cubase from "./cubase.png";
 import logicpro from "./logicpro.png";
 import kicad from "./kicad.png";
+import ruckusEQ from "./photos/ruckusEQ.png"
 
 export {
   menu,
@@ -46,4 +47,5 @@ export {
   cubase, 
   logicpro,
   kicad,
+  ruckusEQ,
 };

@@ -22,6 +22,7 @@ import cubase from "./cubase.png";
 import logicpro from "./logicpro.png";
 import kicad from "./kicad.png";
 import ruckusEQ from "./photos/ruckusEQ.png"
+import geomixer from "./photos/geomixer.png"
 
 export {
   menu,
@@ -48,4 +49,5 @@ export {
   logicpro,
   kicad,
   ruckusEQ,
+  geomixer,
 };

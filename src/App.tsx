@@ -31,11 +31,11 @@ function App() {
           transform:
             window.innerWidth < 768
               ? `skewY(${scrollVel * 3}deg) translateY(${300 * scrollVel}px)`
-              : `skewY(${scrollVel * 2}deg) translateY(${100 * scrollVel}px)`,
+              : `skewY(${scrollVel * 0.66}deg) translateY(${80 * scrollVel}px)`,
           scale:
             window.innerWidth < 768
               ? `${1 - Math.abs(0.1 * scrollVel)}`
-              : `${1 - Math.abs(0.05 * scrollVel)}`,
+              : `${1 - Math.abs(0.04 * scrollVel)}`,
           transition: window.innerWidth < 768 ? "1s ease-out" : "1s ease-out",
         }}
       >

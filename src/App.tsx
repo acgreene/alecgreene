@@ -30,9 +30,13 @@ function App() {
         style={{
           transform:
             window.innerWidth < 768
-              ? `skewY(${scrollVel * 4}deg`
-              : `skewY(${scrollVel * 2.25}deg`,
-          transition: "transform 0.5s ease-out",
+              ? `skewY(${scrollVel * 3}deg) translateY(${300 * scrollVel}px)`
+              : `skewY(${scrollVel * 2}deg) translateY(${100 * scrollVel}px)`,
+          scale:
+            window.innerWidth < 768
+              ? `${1 - Math.abs(0.1 * scrollVel)}`
+              : `${1 - Math.abs(0.05 * scrollVel)}`,
+          transition: window.innerWidth < 768 ? "1s ease-out" : "1s ease-out",
         }}
       >
         <div className="bg-black flex justify-center items-start">

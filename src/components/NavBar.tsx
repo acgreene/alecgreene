@@ -21,6 +21,7 @@ const NavBar = () => {
   const [lastScrollTime, setLastScrollTime] = useState<number>(Date.now());
   const [lastScrollPos, setLastScrollPos] = useState<number>(scrollPos);
   const [maxScrollY, setMaxScrollY] = useRecoilState(maxScroll);
+  const [scrollTimeout, setScrollTimeout] = useState<any>(null);
 
   useEffect(() => {
     function handleScroll() {
@@ -47,6 +48,22 @@ const NavBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrollPos]);
+
+  useEffect(() => {
+    const handleScrollStop = () => {
+      clearTimeout(scrollTimeout);
+      setScrollTimeout(
+        setTimeout(() => {
+          console.log("User has stopped scrolling!");
+          setScrollVel(0);
+        }, 10)
+      );
+    };
+    window.addEventListener("scroll", handleScrollStop);
+    return () => {
+      window.removeEventListener("scroll", handleScrollStop);
+    };
+  }, [scrollTimeout]);
 
   return (
     <>

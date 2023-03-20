@@ -28,6 +28,10 @@ function App() {
       </div>
       <div
         style={{
+          WebkitTransform:
+            window.innerWidth < 768
+              ? `skewY(${scrollVel * 3}deg) translateY(${300 * scrollVel}px)`
+              : `skewY(${scrollVel * 0.66}deg) translateY(${80 * scrollVel}px)`,
           transform:
             window.innerWidth < 768
               ? `skewY(${scrollVel * 3}deg) translateY(${300 * scrollVel}px)`

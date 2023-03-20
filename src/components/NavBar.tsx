@@ -54,7 +54,6 @@ const NavBar = () => {
       clearTimeout(scrollTimeout);
       setScrollTimeout(
         setTimeout(() => {
-          console.log("User has stopped scrolling!");
           setScrollVel(0);
         }, 10)
       );

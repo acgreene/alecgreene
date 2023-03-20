@@ -55,7 +55,7 @@ const NavBar = () => {
       setScrollTimeout(
         setTimeout(() => {
           setScrollVel(0);
-        }, 250)
+        }, 10)
       );
     };
     window.addEventListener("scroll", handleScrollStop);

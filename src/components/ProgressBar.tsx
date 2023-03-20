@@ -8,7 +8,7 @@ const ProgressBar = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 bg-indigo-600 w-px z-40"
+      className="fixed top-0 left-0 bg-indigo-400 w-px z-40"
       style={{ height: `${(100 * scrollPos) / maxScrollY}vh` }}
     ></div>
   );

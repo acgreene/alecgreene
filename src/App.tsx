@@ -28,19 +28,15 @@ function App() {
       </div>
       <div
         style={{
-          WebkitTransform:
-            window.innerWidth < 768
-              ? `skewY(${scrollVel * 3}deg) translateY(${300 * scrollVel}px)`
-              : `skewY(${scrollVel * 0.66}deg) translateY(${80 * scrollVel}px)`,
-          transform:
-            window.innerWidth < 768
-              ? `skewY(${scrollVel * 3}deg) translateY(${300 * scrollVel}px)`
-              : `skewY(${scrollVel * 0.66}deg) translateY(${80 * scrollVel}px)`,
-          scale:
-            window.innerWidth < 768
-              ? `${1 - Math.abs(0.1 * scrollVel)}`
-              : `${1 - Math.abs(0.04 * scrollVel)}`,
-          transition: window.innerWidth < 768 ? "1s ease-out" : "1s ease-out",
+          // WebkitTransform:
+          //   window.innerWidth < 768
+          //     ? `skewY(${scrollVel * 3}deg) translateY(${300 * scrollVel}px)`
+          //     : `skewY(${scrollVel * 0.66}deg) translateY(${80 * scrollVel}px)`,
+          transform: `skewY(${scrollVel * 0.66}deg) translateY(${
+            80 * scrollVel
+          }px)`,
+          scale: `${1 - Math.abs(0.04 * scrollVel)}`,
+          transition: "1s ease-out",
         }}
       >
         <div className="bg-black flex justify-center items-start">

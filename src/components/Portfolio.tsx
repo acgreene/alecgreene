@@ -14,7 +14,7 @@ const Portfolio = () => {
           title="Ruckus EQ"
           caption="Real time audio equalizer software plug-in."
           description="Features six bandpass filters, a lowpass filter, and a 
-                      high pass filter. Filters have gui controls to configure 
+                      high pass filter. Filters have GUI controls to configure 
                       parameters including frequency, gain, q-factor, and slope."
           technologies="C++, JUCE"
           image={ruckusEQ}

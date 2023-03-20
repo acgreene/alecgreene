@@ -1,25 +1,51 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { cursorState, windowScroll } from "../recoil/atoms";
+import {
+  cursorState,
+  maxScroll,
+  windowScroll,
+  windowScrollVelocity,
+} from "../recoil/atoms";
 import { menu, close } from "../assets";
 import { navLinks } from "../constants";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState<Boolean>(false);
 
-  // recoil
-  const [active, setActive] = useRecoilState(cursorState);
-
   let fontSize = "text-[22px]";
 
+  // recoil
+  const [active, setActive] = useRecoilState(cursorState);
   const [scrollPos, setScrollPos] = useRecoilState(windowScroll);
+  const [scrollVel, setScrollVel] = useRecoilState(windowScrollVelocity);
+  const [lastScrollTime, setLastScrollTime] = useState<number>(Date.now());
+  const [lastScrollPos, setLastScrollPos] = useState<number>(scrollPos);
+  const [maxScrollY, setMaxScrollY] = useRecoilState(maxScroll);
 
   useEffect(() => {
     function handleScroll() {
+      const maxScrollY = document.body.scrollHeight - window.innerHeight;
+      setMaxScrollY(maxScrollY);
+
       setScrollPos(window.scrollY);
+      const currScrollTime: number = Date.now();
+
+      const deltaTime = currScrollTime - lastScrollTime;
+      const deltaPos = scrollPos - lastScrollPos;
+      setScrollVel(deltaPos / deltaTime);
+
+      setLastScrollTime(Date.now());
+      setLastScrollPos(window.scrollY);
+
+      // ui error handling
+      if (window.scrollY === 0 || window.scrollY > maxScrollY - 100) {
+        setScrollVel(0);
+      }
     }
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [scrollPos]);
 
   return (

@@ -7,7 +7,6 @@ import twitter from "./twitter.svg";
 import IMG_0001 from "./photos/IMG_0001.png";
 import IMG_0002 from "./photos/IMG_0002.png";
 import IMG_0003 from "./photos/IMG_0003.png";
-import IMG_0004 from "./photos/IMG_0004.jpg";
 import headshot from "./photos/alecgreene_headshot.jpg";
 import headshot_cropped from "./photos/alecgreene_headshot_cropped.png";
 import disto from "./disto.png";
@@ -37,8 +36,7 @@ export {
   twitter,
   IMG_0001, 
   IMG_0002, 
-  IMG_0003, 
-  IMG_0004,
+  IMG_0003,
   headshot,
   headshot_cropped,
   disto,

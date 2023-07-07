@@ -131,12 +131,15 @@ const NavBar = () => {
         </div>
       </div>
       {/* toggle icon */}
-      <img
-        src={toggle ? close : menu}
-        alt="menu"
-        className="w-[28px] h-[28px] top-0 right-0 z-50 fixed sm:hidden"
-        onClick={() => setToggle((prev) => !prev)}
-      />
+      <div className="flex justify-center items-center w-[58px] h-[58px] bottom-5 right-5 fixed sm:hidden z-50">
+        <div className="w-full h-full rounded-2xl bg-gradient-to-r from-neutral-800 to-neutral-900 opacity-60"></div>
+        <img
+          src={toggle ? close : menu}
+          alt="menu"
+          className="absolute w-[28px] h-[28px]"
+          onClick={() => setToggle((prev) => !prev)}
+        />
+      </div>
     </>
   );
 };

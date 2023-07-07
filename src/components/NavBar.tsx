@@ -103,12 +103,14 @@ const NavBar = () => {
       </div>
 
       {/* mobile */}
-      <div className="w-7/12 h-full right-0 flex z-50 fixed sm:hidden">
+      <div
+        className={`${
+          toggle ? "translate-x-0" : "translate-x-full"
+        } w-7/12 h-full right-0 flex z-40 fixed sm:hidden duration-500 ease-out`}
+      >
         {/* menu */}
         <div
-          className={`${
-            toggle ? "translate-x-0" : "translate-x-full"
-          } flex bg-black absolute justify-center items-center top-0 right-0 bottom-0 w-full rounded-x1 sidebar duration-500 ease-out`}
+          className={`flex bg-black absolute justify-center items-center top-0 right-0 bottom-0 w-full rounded-x1 sidebar`}
         >
           <ul className="list-none flex flex-col w-full">
             {navLinks.map((nav, index) => (
@@ -127,15 +129,14 @@ const NavBar = () => {
             ))}
           </ul>
         </div>
-
-        {/* toggle icon */}
-        <img
-          src={toggle ? close : menu}
-          alt="menu"
-          className="w-[28px] h-[28px] absolute top-0 right-0"
-          onClick={() => setToggle((prev) => !prev)}
-        />
       </div>
+      {/* toggle icon */}
+      <img
+        src={toggle ? close : menu}
+        alt="menu"
+        className="w-[28px] h-[28px] top-0 right-0 z-50 fixed sm:hidden"
+        onClick={() => setToggle((prev) => !prev)}
+      />
     </>
   );
 };

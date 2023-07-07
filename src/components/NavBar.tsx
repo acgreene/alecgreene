@@ -66,9 +66,10 @@ const NavBar = () => {
 
   return (
     <>
+      {/* laptop */}
       <div
         className="
-          w-full hidden py-10 top-0 right-0 fixed
+          w-full hidden py-10 top-0 right-0
           sm:pr-0 sm:justify-center sm:flex
           md:pr-12
           lg:pr-20"
@@ -78,59 +79,62 @@ const NavBar = () => {
             scrollPos / 10
           })`,
         }}
-      ></div>
-
-      {/* laptop nav bar */}
-      <ul
-        className="
-          w-full py-6 top-0 right-0 fixed list-none hidden items-center flex-1 z-30
+      >
+        <ul
+          className="
+          w-full top-0 right-0 list-none hidden items-center flex-1 z-30
           sm:pr-0 sm:justify-center sm:flex
           md:pr-20 md:justify-end"
-      >
-        {navLinks.map((nav, index) => (
-          <li
-            key={nav.id}
-            className={`font-normal ${fontSize}
+        >
+          {navLinks.map((nav, index) => (
+            <li
+              key={nav.id}
+              className={`font-normal ${fontSize}
               ${index == navLinks.length - 1 ? "mr-0" : "mr-10"} text-white`}
-            onMouseEnter={() => setActive(true)}
-            onMouseLeave={() => setActive(false)}
-          >
-            <a href={`#${nav.id}`} className="cursor-none relative">
-              {nav.title}
-            </a>
-          </li>
-        ))}
-      </ul>
+              onMouseEnter={() => setActive(true)}
+              onMouseLeave={() => setActive(false)}
+            >
+              <a href={`#${nav.id}`} className="cursor-none relative">
+                {nav.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-      {/* list of items only for mobile devices */}
-      <div className="sm:hidden flex flex-1 justify-end items-center z-30">
-        <img
-          src={toggle ? close : menu}
-          alt="menu"
-          className="w-[28px] h-[28px] object-contain"
-          onClick={() => setToggle((prev) => !prev)}
-        />
-
-        {/* mobile menu */}
+      {/* mobile */}
+      <div className="w-7/12 h-full right-0 flex z-50 fixed sm:hidden">
+        {/* menu */}
         <div
           className={`${
-            toggle ? "flex" : "hidden"
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-x1 sidebar`}
+            toggle ? "translate-x-0" : "translate-x-full"
+          } flex bg-black absolute justify-center items-center top-0 right-0 bottom-0 w-full rounded-x1 sidebar duration-500 ease-out`}
         >
-          <ul className="list-none flex flex-col justify-end items-center flex-1">
+          <ul className="list-none flex flex-col w-full">
             {navLinks.map((nav, index) => (
-              <li
-                key={nav.id}
-                className={`font-normal text-[16px]
+              <div className="w-full h-20 my-10">
+                {/* <div className="w-100 h-px bg-white"></div> */}
+                <li
+                  key={nav.id}
+                  className={`flex justify-center font-normal text-2xl w-full
                     ${
                       index == navLinks.length - 1 ? "mr-0" : "mb-4"
                     } text-white`}
-              >
-                <a href={`#${nav.id}`}>{nav.title}</a>
-              </li>
+                >
+                  <a href={`#${nav.id}`}>{nav.title}</a>
+                </li>
+              </div>
             ))}
           </ul>
         </div>
+
+        {/* toggle icon */}
+        <img
+          src={toggle ? close : menu}
+          alt="menu"
+          className="w-[28px] h-[28px] absolute top-0 right-0"
+          onClick={() => setToggle((prev) => !prev)}
+        />
       </div>
     </>
   );

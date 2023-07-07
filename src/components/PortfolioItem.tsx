@@ -38,6 +38,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
       setActive(false);
     }
   };
+
   return (
     <div className="mb-28 sm:mb-36 lg:mb-52">
       {isImageLeft && window.innerWidth > 768 ? (
@@ -53,7 +54,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
                 href={githubLink}
                 target="_blank"
                 className="mx-6 cursor-none"
-                style={{ zIndex: isHovering ? "30" : "0" }}
+                style={{ zIndex: isHovering ? "99" : "0" }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
@@ -78,7 +79,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
                 href={githubLink}
                 target="_blank"
                 className="mx-6 cursor-none"
-                style={{ zIndex: isHovering ? "30" : "0" }}
+                style={{ zIndex: isHovering ? "99" : "0" }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >

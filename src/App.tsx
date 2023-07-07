@@ -3,8 +3,8 @@ import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import Cursor from "./components/Cursor";
 import NavBar from "./components/NavBar";
-import Hero from "./components/Hero";
-import About from "./components/About";
+import Hero from "./components/Cards/Hero";
+import About from "./components/About/About";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
@@ -26,16 +26,9 @@ function App() {
       <div className="xl:max-w-[1280px] w-full">
         <NavBar />
       </div>
-      <div
-        style={{
-          transform: `skewY(${scrollVel * 0.66}deg) translateY(${
-            80 * scrollVel
-          }px)`,
-          scale: `${1 - Math.abs(0.04 * scrollVel)}`,
-          transition: "1s ease-out",
-        }}
-      >
-        <div className="bg-black flex justify-center items-start">
+
+      <div>
+        <div className="flex justify-center items-start mb-24">
           <div className="xl:max-w-[1280px] w-full">
             <Hero />
           </div>

@@ -1,4 +1,4 @@
-import { ruckusEQ, geomixer } from "../assets";
+import { ruckusEQ, geomixer, redditClone } from "../assets";
 import PortfolioItem from "./PortfolioItem";
 
 const Portfolio = () => {
@@ -11,6 +11,15 @@ const Portfolio = () => {
       <div className="w-100 h-px mt-5 mb-5 bg-white"></div>
       <div className="mt-12">
         <PortfolioItem
+          title="Reddit Clone"
+          caption="Full stack clone of Reddit."
+          description=""
+          technologies="Next.js, Firebase, Chakra UI"
+          image={redditClone}
+          isImageLeft={true}
+          githubLink="https://github.com/acgreene/reddit-clone"
+        ></PortfolioItem>
+        <PortfolioItem
           title="Ruckus EQ"
           caption="Real time audio equalizer software plug-in."
           description="Features six bandpass filters, a lowpass filter, and a 
@@ -21,7 +30,7 @@ const Portfolio = () => {
           isImageLeft={false}
           githubLink="https://github.com/acgreene/RuckusEQ"
         ></PortfolioItem>
-        <PortfolioItem
+        {/* <PortfolioItem
           title="Geomixer"
           caption="Web-app controlled device that applied custom DSP FX to real time audio."
           description="Collaborated with a project team to create 
@@ -33,7 +42,7 @@ const Portfolio = () => {
           image={geomixer}
           isImageLeft={true}
           githubLink="https://github.com/acgreene/geomixer"
-        ></PortfolioItem>
+        ></PortfolioItem> */}
       </div>
     </div>
   );

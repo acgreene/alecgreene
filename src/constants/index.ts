@@ -13,14 +13,6 @@ export const navLinks = [
         id: "blog",
         title: "blog",
     },
-    {
-        id: "contact",
-        title: "contact",
-    },
-    {
-        id: "resume/cv",
-        title: "resume/cv",
-    },
 ];
 
 export const socialMedia = [

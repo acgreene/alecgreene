@@ -2,6 +2,10 @@ import { instagram, twitter, linkedin, juce, cpp, react, typescript, tailwind, n
 
 export const navLinks = [
     {
+        id: "",
+        title: "home",
+    },
+    {
         id: "about",
         title: "about",
     },

@@ -114,10 +114,9 @@ const NavBar = () => {
         >
           <ul className="list-none flex flex-col w-full">
             {navLinks.map((nav, index) => (
-              <div className="w-full h-20 my-10">
+              <div className="w-full h-20 my-10" key={nav.id}>
                 {/* <div className="w-100 h-px bg-white"></div> */}
                 <li
-                  key={nav.id}
                   className={`flex justify-center font-normal text-2xl w-full
                     ${
                       index == navLinks.length - 1 ? "mr-0" : "mb-4"
@@ -132,7 +131,7 @@ const NavBar = () => {
       </div>
       {/* toggle icon */}
       <div className="flex justify-center items-center w-[58px] h-[58px] bottom-5 right-5 fixed sm:hidden z-50">
-        <div className="w-full h-full rounded-2xl bg-gradient-to-r from-neutral-800 to-neutral-900 opacity-60"></div>
+        <div className="w-full h-full rounded-full bg-gradient-to-r from-neutral-800 to-neutral-900 opacity-80"></div>
         <img
           src={toggle ? close : menu}
           alt="menu"

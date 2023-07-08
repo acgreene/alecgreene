@@ -7,8 +7,10 @@ import twitter from "./twitter.svg";
 import IMG_0001 from "./photos/IMG_0001.png";
 import IMG_0002 from "./photos/IMG_0002.png";
 import IMG_0003 from "./photos/IMG_0003.png";
+import IMG_4316 from "./photos/IMG_4316.png";
 import headshot from "./photos/alecgreene_headshot.jpg";
 import headshot_cropped from "./photos/alecgreene_headshot_cropped.png";
+import headshot_transparent from "./photos/alecgreene_headshot_transparent.png"
 import disto from "./disto.png";
 import react from "./react.png";
 import typescript from "./typescript.png";
@@ -37,8 +39,10 @@ export {
   IMG_0001, 
   IMG_0002, 
   IMG_0003,
+  IMG_4316,
   headshot,
   headshot_cropped,
+  headshot_transparent,
   disto,
   react, 
   typescript,

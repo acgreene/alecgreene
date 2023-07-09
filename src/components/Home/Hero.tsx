@@ -22,21 +22,22 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="relative items-center flex justify-center my-10">
-          <div className="absolute">
-            <LoopingElement
-              currentTranslation={0}
-              speed={marquee_speed}
-              color={""}
-            />
-          </div>
-          <div className="absolute">
-            <LoopingElement
-              currentTranslation={-100}
-              speed={marquee_speed}
-              color={""}
-            />
-          </div>
+        <div
+          className="relative w-full items-center flex flex-row justify-center my-10"
+          style={{ transform: "skew(5deg)" }}
+        >
+          <LoopingElement
+            currentTranslation={0}
+            speed={marquee_speed}
+            color={""}
+          />
+          <LoopingElement
+            currentTranslation={-100}
+            speed={marquee_speed}
+            color={""}
+          />
+          {/* <div className="relative"></div>
+          <div className="relative"></div> */}
         </div>
 
         {/* <StaticMarquee

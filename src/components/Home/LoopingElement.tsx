@@ -97,6 +97,7 @@ const LoopingElement: React.FC<LoopingElementProps> = ({
   color,
 }) => {
   const elementRef = useRef<HTMLDivElement>(null);
+  console;
 
   useEffect(() => {
     if (elementRef.current) {
@@ -111,8 +112,7 @@ const LoopingElement: React.FC<LoopingElementProps> = ({
   return (
     <div
       ref={elementRef}
-      className="text-2xl tracking-wider flex flex-row w-full whitespace-nowrap"
-      style={{ width: "100vw" }}
+      className="text-3xl tracking-wider flex flex-row whitespace-nowrap absolute"
     >
       <div
         className={`${color} shrink-0 w-full flex flex-row justify-center items-center`}

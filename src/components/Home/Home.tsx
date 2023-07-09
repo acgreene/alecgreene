@@ -29,11 +29,17 @@ const Home: React.FC<HomeProps> = () => {
       </div>
       <div className="mb-96">
         <div className="text-white mx-12 text-5xl mt-[320px] flex flex-col">
-          <div>areas</div>
-          <div>of expertise</div>
+          <div>areas of</div>
+          <div>expertise</div>
         </div>
-        <div className="relative w-full h-[34vh]">
-          <div className="absolute w-full h-1/3 top-0">
+        <div
+          className="relative w-[95%] h-[34vh]"
+          style={{ transform: "translateX(3%)" }}
+        >
+          <div
+            className="absolute w-full h-1/3 top-0"
+            style={{ perspective: "320px" }}
+          >
             <ExpertiseCard
               title="software"
               subtitles={[
@@ -44,14 +50,20 @@ const Home: React.FC<HomeProps> = () => {
             />
           </div>
 
-          <div className="absolute w-full h-1/3 top-1/3">
+          <div
+            className="absolute w-full h-1/3 top-1/3"
+            style={{ perspective: "320px" }}
+          >
             <ExpertiseCard
               title="audio"
               subtitles={["mixing", "session guitar"]}
             />
           </div>
 
-          <div className="absolute w-full h-1/3 top-2/3">
+          <div
+            className="absolute w-full h-1/3 top-2/3"
+            style={{ perspective: "320px" }}
+          >
             <ExpertiseCard
               title="consulting"
               subtitles={[

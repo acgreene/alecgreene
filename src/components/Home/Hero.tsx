@@ -4,9 +4,8 @@ import { BsCodeSlash } from "react-icons/bs";
 import { GiSoundWaves } from "react-icons/gi";
 import { windowScrollVelocity } from "../../recoil/atoms";
 import { useRecoilState } from "recoil";
+import MyComponent from "./DynamicMarquee";
 import DynamicMarquee from "./DynamicMarquee";
-import MyComponent from "./LoopingElement";
-import LoopingElement from "./LoopingElement";
 
 const Hero = () => {
   const marquee_speed = 0.25;
@@ -26,12 +25,12 @@ const Hero = () => {
           className="relative w-full items-center flex flex-row justify-center my-10"
           style={{ transform: "skew(5deg)" }}
         >
-          <LoopingElement
+          <DynamicMarquee
             currentTranslation={0}
             speed={marquee_speed}
             color={""}
           />
-          <LoopingElement
+          <DynamicMarquee
             currentTranslation={-100}
             speed={marquee_speed}
             color={""}

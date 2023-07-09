@@ -8,7 +8,7 @@ import Explorations from "../Explorations/Explorations";
 const About = () => {
   return (
     <div
-      id="about"
+      id="resume"
       className="flex justify-center items-center h-100 flex-row flex-wrap sm:mb-20 mb-6 text-white"
     >
       <div className="mb-10 w-full sm:mb-20 md:mb-36">

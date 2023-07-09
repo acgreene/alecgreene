@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import About from "../About/About";
 import DynamicMarquee from "./DynamicMarquee";
 import ExpertiseCard from "./ExpertiseCard";
+import { headshot_cropped, headshot_transparent } from "../../assets";
 
 type HomeProps = {};
 
@@ -14,27 +15,30 @@ const Home: React.FC<HomeProps> = () => {
       </div>
       <div className="flex justify-center items-center w-full">
         <span className="text-white text-xl mx-12">
-          I offer solutions for ambitious projects under the umbrellas of
-          technology and music. However, if you have another request or
-          question, don't hesitate to
+          I offer solutions for ambitious projects in the domains of technology
+          and music, and work with studios, individuals, groups, and businesses
+          to bring life into unique concepts & designs. If you have any requests
+          or questions, please don't hesitate to
           <div
             className="underline text-blue-400"
             onClick={() =>
               (window.location.href = "mailto:aleccgreene@gmail.com")
             }
           >
-            talk to me
+            reach out
           </div>
         </span>
       </div>
-      <div className="mb-96">
-        <div className="text-white mx-12 text-5xl mt-[320px] flex flex-col">
-          <div>areas of</div>
-          <div>expertise</div>
+      <div className="mb-96 mt-[225px]">
+        <div
+          className="text-white mx-12 text-4xl flex w-full relative h-full"
+          // style={{ transform: "translateX(-10px)" }}
+        >
+          areas of expertise
         </div>
         <div
-          className="relative w-[95%] h-[34vh]"
-          style={{ transform: "translateX(3%)" }}
+          className="relative w-[93%] h-[40vh]"
+          style={{ transform: "translateX(5%)" }}
         >
           <div
             className="absolute w-full h-1/3 top-0"
@@ -45,7 +49,7 @@ const Home: React.FC<HomeProps> = () => {
               subtitles={[
                 "full-stack web development",
                 "JUCE audio plug-ins",
-                "Python automation",
+                "python tools/automation",
               ]}
             />
           </div>
@@ -56,7 +60,12 @@ const Home: React.FC<HomeProps> = () => {
           >
             <ExpertiseCard
               title="audio"
-              subtitles={["mixing", "session guitar"]}
+              subtitles={[
+                "mixing, mastering",
+                "session guitar",
+                "live sound",
+                "gigging musician",
+              ]}
             />
           </div>
 
@@ -67,8 +76,11 @@ const Home: React.FC<HomeProps> = () => {
             <ExpertiseCard
               title="consulting"
               subtitles={[
-                "software engineering risk management & best practices",
-                "audio mixing support",
+                "software architecture",
+                "support in audio mixing",
+                "design",
+                "startups, business ventures",
+                "systems",
               ]}
             />
           </div>

@@ -10,6 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Logo from "./components/Logo";
 import { noise } from "./assets";
+import Footer from "./components/Footer";
 
 function App() {
   const [scrollVel, setScrollVel] = useRecoilState(windowScrollVelocity);
@@ -35,7 +36,7 @@ function App() {
             }
           ></Route>
           <Route
-            path="/about"
+            path="/resume"
             element={
               <div>
                 <About />
@@ -60,6 +61,7 @@ function App() {
           ></Route>
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }

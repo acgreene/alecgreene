@@ -13,7 +13,7 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({ title, subtitles }) => {
     <div
       className={`flex flex-col w-full my-4 justify-start items-start ${
         toggle ? "bg-indigo-400" : "bg-neutral-900"
-      } ease-in-out duration-300`}
+      } ease-out duration-300`}
       onClick={() => setToggle((prev) => !prev)}
       style={{
         transform: `${
@@ -27,7 +27,7 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({ title, subtitles }) => {
       }}
     >
       <h1
-        className={`text-5xl my-4 ml-6 ${
+        className={`text-3xl my-4 ml-6 ${
           toggle ? "text-black" : "text-indigo-500"
         }`}
       >

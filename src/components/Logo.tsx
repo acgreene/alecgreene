@@ -138,7 +138,7 @@ const Logo: React.FC<LogoProps> = () => {
           </ul>
           <div className="flex flex-col w-full justify-start pt-8">
             <div
-              className="underline"
+              className="underline py-1"
               onClick={() =>
                 (window.location.href = "mailto:aleccgreene@gmail.com")
               }
@@ -147,9 +147,12 @@ const Logo: React.FC<LogoProps> = () => {
             </div>
             <a
               href="https://www.linkedin.com/in/alecgreene/"
-              className="underline"
+              className="underline py-1"
             >
               Linkedin
+            </a>
+            <a href="hhttps://github.com/acgreene" className="underline py-1">
+              Github
             </a>
           </div>
         </div>

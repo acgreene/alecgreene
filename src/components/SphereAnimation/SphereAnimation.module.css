@@ -1,0 +1,64 @@
+html {
+    background-color: #000;
+}
+
+.wrapper {
+    margin: 0px;
+    perspective: 400px;
+    /* perspective-origin: 50% 100px; */
+}
+
+.sphere {
+    position: relative;
+    margin: 10px auto;
+    width: 10px;
+    transform-style: preserve-3d;
+}
+
+.sphere>div {
+    border: solid 1px rgb(99 102 241);
+    border-radius: 60%;
+    height: 50px;
+    opacity: 0.75;
+    position: absolute;
+    width: 50px;
+}
+
+.slice.equator {
+    transform: rotateX(90deg);
+    border: solid 2px rgb(255 255 255);
+    opacity: 0.4;
+}
+
+.slice.tropic {
+    border: solid 2px rgb(255 255 255);
+    opacity: 0.4;
+}
+
+.slice.cancer {
+    transform: translateY(-9px) rotateX(90deg);
+    /* border: solid 2px rgb(255 255 255); */
+}
+
+.slice.capricorn {
+    transform: translateY(9px) rotateX(90deg);
+    /* border: solid 2px rgb(255 255 255); */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateX(15deg) rotateY(0) rotateZ(20deg);
+    }
+
+    50% {
+        transform: rotateX(10deg) rotateY(180deg) rotateZ(10deg);
+    }
+
+    100% {
+        transform: rotateX(15deg) rotateY(360deg) rotateZ(20deg);
+    }
+}
+
+.sphere {
+    animation: spin 20s infinite linear;
+}

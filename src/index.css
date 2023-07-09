@@ -5,30 +5,3 @@
 * {
     font-family: "SK-Modernist";
 }
-
-.marquee {
-    height: 200px;
-    width: 100vw;
-    /* border: 2px solid #eee; */
-    /* overflow: hidden; */
-    box-sizing: border-box;
-    position: relative;
-    /* margin: 200px auto; */
-}
-
-.marquee-inner {
-    display: block;
-    width: 200%;
-    /* margin: 70px 0; */
-    position: absolute;
-    animation: marquee 20s linear infinite;
-}
-
-.marquee-inner:hover {
-    animation-play-state: paused;
-}
-
-@keyframes marquee {
-    0% { left: 0; }
-    100% { left: -100%; }
-}

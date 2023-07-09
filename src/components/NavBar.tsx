@@ -114,7 +114,7 @@ const NavBar = () => {
         >
           <ul className="list-none flex flex-col w-full">
             {navLinks.map((nav, index) => (
-              <div className="w-full h-20 my-10" key={nav.id}>
+              <div className="w-full h-8 my-8" key={nav.id}>
                 {/* <div className="w-100 h-px bg-white"></div> */}
                 <li
                   className={`flex justify-center font-normal text-2xl w-full

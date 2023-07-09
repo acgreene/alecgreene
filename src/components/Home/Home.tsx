@@ -31,10 +31,10 @@ const Home: React.FC<HomeProps> = () => {
       </div>
       <div className="mb-96 mt-[225px]">
         <div
-          className="text-white mx-12 text-4xl flex w-full relative h-full"
+          className="flex relative w-full h-full items-center justify-center"
           // style={{ transform: "translateX(-10px)" }}
         >
-          areas of expertise
+          <span className="text-white text-4xl">areas of expertise</span>
         </div>
         <div
           className="relative w-[93%] h-[40vh]"

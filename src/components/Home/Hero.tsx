@@ -9,22 +9,20 @@ import DynamicMarquee from "./DynamicMarquee";
 
 const Hero = () => {
   const marquee_speed = 0.25;
+  const [scrollVel, setScrollVel] = useRecoilState(windowScrollVelocity);
   return (
     <div className="flex justify-center items-center w-full md:flex-row h-96">
       <div className="relative w-full h-full flex flex-col justify-center items-center text-white">
-        <div className="w-full text-6xl my-10">
-          <div className="w-full h-1/2 flex justify-start items-end">
-            <h1>ALEC</h1>
-          </div>
-          <div className="w-full h-1/2 flex justify-end items-start">
-            <h1>GREENE</h1>
-          </div>
-        </div>
-
         <div
-          className="relative w-full items-center flex flex-row justify-center my-10"
-          style={{ transform: "skew(5deg)" }}
+          className={`relative w-full items-center flex flex-row justify-center my-10 text-indigo-400`}
+          style={{ transform: "rotate(-3deg)" }}
         >
+          {/* <div
+            className="absolute bg-blue-500 h-40 ease-in duration-100"
+            style={{
+              width: "200vw",
+            }}
+          ></div> */}
           <DynamicMarquee
             currentTranslation={0}
             speed={marquee_speed}
@@ -35,8 +33,6 @@ const Hero = () => {
             speed={marquee_speed}
             color={""}
           />
-          {/* <div className="relative"></div>
-          <div className="relative"></div> */}
         </div>
 
         {/* <StaticMarquee

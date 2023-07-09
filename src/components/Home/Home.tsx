@@ -7,7 +7,7 @@ type HomeProps = {};
 const Home: React.FC<HomeProps> = () => {
   return (
     <div className="w-full h-full sm:px-16">
-      <div className="my-28">
+      <div className="my-6">
         <Hero />
       </div>
 

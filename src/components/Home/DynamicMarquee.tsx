@@ -125,8 +125,9 @@ const DynamicMarquee: React.FC<DynamicMarqueeProps> = ({
       this.lerpFunc(this.lerp.current, this.lerp.target, this.lerp.factor);
 
       if (this.element) {
-        this.element.style.transform = `translateX(${this.lerp.current}%)`;
-        // setCurrentMarqueeTranslation(this.lerp.current);
+        this.element.style.transform = `translateX(${
+          this.lerp.current
+        }%) skew(${this.scrollVel * 15}deg)`;
       }
     };
 
@@ -151,7 +152,7 @@ const DynamicMarquee: React.FC<DynamicMarqueeProps> = ({
   return (
     <div
       ref={elementRef}
-      className="text-3xl tracking-wider flex flex-row whitespace-nowrap absolute"
+      className="text-4xl tracking-wider flex flex-row whitespace-nowrap absolute"
     >
       <div
         className={`${color} shrink-0 w-full flex flex-row justify-center items-center`}

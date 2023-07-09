@@ -110,7 +110,7 @@ const NavBar = () => {
       >
         {/* menu */}
         <div
-          className={`flex bg-black absolute justify-center items-center top-0 right-0 bottom-0 w-full rounded-x1 sidebar`}
+          className={`flex bg-indigo-500 absolute justify-center items-center top-0 right-0 bottom-0 w-full rounded-x1 sidebar`}
         >
           <ul className="list-none flex flex-col w-full">
             {navLinks.map((nav, index) => (
@@ -130,13 +130,24 @@ const NavBar = () => {
         </div>
       </div>
       {/* toggle icon */}
-      <div className="flex justify-center items-center w-[58px] h-[58px] bottom-5 right-5 fixed sm:hidden z-50">
-        <div className="w-full h-full rounded-full bg-gradient-to-r from-neutral-800 to-neutral-900 opacity-80"></div>
+      <div
+        className="flex justify-center items-center w-[54px] h-[54px] fixed sm:hidden z-50 ease-in-out duration-300"
+        style={{
+          top: `${toggle ? "30px" : "20px"}`,
+          right: `${toggle ? "30px" : "20px"}`,
+        }}
+      >
+        <div className="absolute w-full h-full rounded-full bg-gradient-to-r from-indigo-800 to-indigo-900 opacity-80"></div>
+        <div className="absolute w-[50px] h-[50px] rounded-full bg-black"></div>
         <img
           src={toggle ? close : menu}
           alt="menu"
-          className="absolute w-[28px] h-[28px]"
+          className="absolute w-[22px] h-[22px]"
           onClick={() => setToggle((prev) => !prev)}
+          style={{
+            filter:
+              "invert(52%) sepia(86%) saturate(6775%) hue-rotate(239deg) brightness(99%) contrast(105%)",
+          }}
         />
       </div>
     </>

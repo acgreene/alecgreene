@@ -17,18 +17,6 @@ function App() {
   return (
     <div className="bg-black relative top-0 left-0 w-full overflow-hidden overscroll-none sm:cursor-none select-none">
       <Cursor />
-
-      <div
-        className="absolute z-0 overflow-hidden"
-        style={{ transform: "scale(1)", opacity: "0.05" }}
-      >
-        <img src={noise} alt="GIF" />
-        <img src={noise} alt="GIF" />
-        <img src={noise} alt="GIF" />
-        <img src={noise} alt="GIF" />
-        <img src={noise} alt="GIF" />
-      </div>
-
       <div className="sm:hidden">
         <ProgressBar />
         <Logo />

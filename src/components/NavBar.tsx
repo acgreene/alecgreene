@@ -6,12 +6,9 @@ import {
   windowScroll,
   windowScrollVelocity,
 } from "../recoil/atoms";
-import { menu, close } from "../assets";
 import { navLinks } from "../constants";
 
 const NavBar = () => {
-  const [toggle, setToggle] = useState<Boolean>(false);
-
   let fontSize = "text-[22px]";
 
   // recoil
@@ -100,66 +97,6 @@ const NavBar = () => {
             </li>
           ))}
         </ul>
-      </div>
-
-      {/* mobile */}
-      <div
-        className={`${
-          toggle ? "translate-x-0" : "translate-x-full"
-        } w-7/12 h-full right-0 flex z-40 fixed sm:hidden duration-500 ease-in-out`}
-      >
-        {/* menu */}
-        <div
-          className={`flex bg-indigo-500 absolute justify-center items-center top-0 right-0 bottom-0 w-full rounded-x1 sidebar`}
-        >
-          <ul className="list-none flex flex-col w-full">
-            {navLinks.map((nav, index) => (
-              <div className="w-full h-8 my-8" key={nav.id}>
-                {/* <div className="w-100 h-px bg-white"></div> */}
-                <li
-                  className={`flex justify-center font-normal text-2xl w-full
-                    ${
-                      index == navLinks.length - 1 ? "mr-0" : "mb-4"
-                    } text-black`}
-                >
-                  <a href={`#/${nav.id}`}>{nav.title}</a>
-                </li>
-              </div>
-            ))}
-          </ul>
-        </div>
-      </div>
-      {/* toggle icon */}
-      <div
-        className="flex justify-center items-center w-[54px] h-[54px] fixed sm:hidden z-50 ease-in-out duration-200"
-        style={{
-          top: `${toggle ? "30px" : "20px"}`,
-          right: `${toggle ? "30px" : "20px"}`,
-        }}
-      >
-        <div
-          className={`absolute w-full h-full rounded-full ease-in-out duration-300 ${
-            toggle ? "bg-black" : "bg-indigo-500"
-          } opacity-80`}
-        ></div>
-        <div
-          className={`absolute w-[50px] h-[50px] rounded-full ease-in-out duration-300 ${
-            toggle ? "bg-indigo-500" : "bg-black"
-          }`}
-        ></div>
-        <img
-          src={toggle ? close : menu}
-          alt="menu"
-          className="absolute w-[22px] h-[22px]"
-          onClick={() => setToggle((prev) => !prev)}
-          style={{
-            filter: `${
-              toggle
-                ? "invert(100%) sepia(0%) saturate(0%) hue-rotate(326deg) brightness(96%) contrast(104%)"
-                : "invert(52%) sepia(86%) saturate(6775%) hue-rotate(239deg) brightness(99%) contrast(105%)"
-            }`,
-          }}
-        />
       </div>
     </>
   );

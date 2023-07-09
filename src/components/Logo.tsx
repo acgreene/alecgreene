@@ -14,12 +14,14 @@ const Logo: React.FC<LogoProps> = () => {
   const [scrollPos, setScrollPos] = useRecoilState(windowScroll);
   const [toggle, setToggle] = useState<Boolean>(false);
 
+  const scrollPosTrigger = 75;
+
   const background_notoggle: StyleObject = {
-    height: `${scrollPos > 200 ? "35px" : "150px"}`,
-    width: `${scrollPos > 200 ? "55px" : "128px"}`,
-    paddingBottom: `${scrollPos > 200 ? "0px" : "40px"}`,
-    paddingLeft: `${scrollPos > 200 ? "0px" : "24px"}`,
-    paddingRight: `${scrollPos > 200 ? "0px" : "24px"}`,
+    height: `${scrollPos > scrollPosTrigger ? "35px" : "150px"}`,
+    width: `${scrollPos > scrollPosTrigger ? "55px" : "128px"}`,
+    paddingBottom: `${scrollPos > scrollPosTrigger ? "0px" : "40px"}`,
+    paddingLeft: `${scrollPos > scrollPosTrigger ? "0px" : "24px"}`,
+    paddingRight: `${scrollPos > scrollPosTrigger ? "0px" : "24px"}`,
     top: "20px",
     left: "20px",
   };
@@ -45,22 +47,26 @@ const Logo: React.FC<LogoProps> = () => {
         <div
           className="w-full h-full flex"
           style={{
-            flexDirection: `${scrollPos > 200 ? "row" : "column"}`,
+            flexDirection: `${scrollPos > scrollPosTrigger ? "row" : "column"}`,
             display: `${toggle ? "none" : "flex"}`,
           }}
         >
           <div
             className="w-full h-1/2 flex"
             style={{
-              alignItems: `${scrollPos > 200 ? "flex-start" : "flex-end"}`,
-              justifyContent: `${scrollPos > 200 ? "center" : "flex-start"}`,
+              alignItems: `${
+                scrollPos > scrollPosTrigger ? "flex-start" : "flex-end"
+              }`,
+              justifyContent: `${
+                scrollPos > scrollPosTrigger ? "center" : "flex-start"
+              }`,
             }}
           >
             <span
               style={{
-                fontWeight: `${scrollPos > 200 ? "700" : "400"}`,
+                fontWeight: `${scrollPos > scrollPosTrigger ? "700" : "400"}`,
                 transform: `${
-                  scrollPos > 200
+                  scrollPos > scrollPosTrigger
                     ? "translateX(7px) translateY(0px)"
                     : "translateX(0px) translateY(0px)"
                 }`,
@@ -70,7 +76,7 @@ const Logo: React.FC<LogoProps> = () => {
             </span>
             <div
               style={{
-                display: `${scrollPos > 200 ? "none" : "flex"}`,
+                display: `${scrollPos > scrollPosTrigger ? "none" : "flex"}`,
               }}
             >
               <span>l</span>
@@ -82,7 +88,7 @@ const Logo: React.FC<LogoProps> = () => {
             className="w-full h-1/2 flex justify-start items-start font-bold"
             style={{
               transform: `${
-                scrollPos > 200
+                scrollPos > scrollPosTrigger
                   ? "translateX(0px) translateY(0px)"
                   : "translateX(0px) translateY(-12px)"
               }`,
@@ -91,7 +97,7 @@ const Logo: React.FC<LogoProps> = () => {
             <span>g</span>
             <div
               style={{
-                display: `${scrollPos > 200 ? "none" : "flex"}`,
+                display: `${scrollPos > scrollPosTrigger ? "none" : "flex"}`,
               }}
             >
               <span>r</span>

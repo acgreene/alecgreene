@@ -11,16 +11,29 @@ const Hero = () => {
   const marquee_speed = 0.25;
   const [scrollVel, setScrollVel] = useRecoilState(windowScrollVelocity);
   return (
-    <div className="flex justify-center items-center w-full md:flex-row h-96">
-      <div className="relative w-full h-full flex flex-col justify-center items-center text-white">
+    <div className="flex flex-col justify-center items-center w-full md:flex-row h-full">
+      <div className="relative flex flex-col justify-start items-center w-full h-screen">
+        <div className="text-white text-4xl w-full h-screen flex relative items-center">
+          endlessly learning, <br />
+          <br />
+          inpired through technical and creative mediums, <br />
+          <br />
+          engineering for work, <br />
+          <br />
+          and for fun. <br />
+        </div>
+      </div>
+
+      <div className="relative w-full h-full flex flex-col justify-center items-center mt-24 text-white">
         <div
-          className={`relative w-full items-center flex flex-row justify-center my-10 text-indigo-400`}
-          style={{ transform: "rotate(-3deg)" }}
+          className={`relative w-full items-center flex flex-row justify-center text-indigo-400`}
+          style={{ transform: "rotate(-5deg)" }}
         >
           {/* <div
-            className="absolute bg-blue-500 h-40 ease-in duration-100"
+            className="absolute bg-indigo-900 h-28 ease-in duration-100"
             style={{
               width: "200vw",
+              opacity: "0.2",
             }}
           ></div> */}
           <DynamicMarquee

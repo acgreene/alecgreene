@@ -152,7 +152,7 @@ const DynamicMarquee: React.FC<DynamicMarqueeProps> = ({
   return (
     <div
       ref={elementRef}
-      className="text-4xl tracking-wider flex flex-row whitespace-nowrap absolute"
+      className="text-6xl tracking-wider flex flex-row whitespace-nowrap absolute"
     >
       <div
         className={`${color} shrink-0 w-full flex flex-row justify-center items-center`}

@@ -104,7 +104,7 @@ const Logo: React.FC<LogoProps> = () => {
         </div>
 
         <div
-          className={`flex justify-center items-center top-0 bottom-0 right-0 duration-500 ease-in-out`}
+          className={`flex justify-center flex-col items-center top-0 bottom-0 right-0 duration-500 ease-in-out`}
           style={{
             display: `${toggle ? "flex" : "none"}`,
             width: "100%",
@@ -113,10 +113,9 @@ const Logo: React.FC<LogoProps> = () => {
         >
           <ul className="list-none flex flex-col w-full">
             {navLinks.map((nav, index) => (
-              <div className="w-full h-8 my-8" key={nav.id}>
-                {/* <div className="w-100 h-px bg-white"></div> */}
+              <div className="w-full h-8 my-4" key={nav.id}>
                 <li
-                  className={`flex justify-center font-normal text-2xl w-full
+                  className={`flex justify-start font-normal text-5xl w-full
                     ${
                       index == navLinks.length - 1 ? "mr-0" : "mb-4"
                     } text-black`}
@@ -131,6 +130,22 @@ const Logo: React.FC<LogoProps> = () => {
               </div>
             ))}
           </ul>
+          <div className="flex flex-col w-full justify-start pt-8">
+            <div
+              className="underline"
+              onClick={() =>
+                (window.location.href = "mailto:aleccgreene@gmail.com")
+              }
+            >
+              aleccgreene@gmail.com
+            </div>
+            <a
+              href="https://www.linkedin.com/in/alecgreene/"
+              className="underline"
+            >
+              Linkedin
+            </a>
+          </div>
         </div>
       </div>
 

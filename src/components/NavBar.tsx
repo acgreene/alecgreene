@@ -106,7 +106,7 @@ const NavBar = () => {
       <div
         className={`${
           toggle ? "translate-x-0" : "translate-x-full"
-        } w-7/12 h-full right-0 flex z-40 fixed sm:hidden duration-500 ease-out`}
+        } w-7/12 h-full right-0 flex z-40 fixed sm:hidden duration-500 ease-in-out`}
       >
         {/* menu */}
         <div
@@ -120,7 +120,7 @@ const NavBar = () => {
                   className={`flex justify-center font-normal text-2xl w-full
                     ${
                       index == navLinks.length - 1 ? "mr-0" : "mb-4"
-                    } text-white`}
+                    } text-black`}
                 >
                   <a href={`#/${nav.id}`}>{nav.title}</a>
                 </li>
@@ -131,22 +131,33 @@ const NavBar = () => {
       </div>
       {/* toggle icon */}
       <div
-        className="flex justify-center items-center w-[54px] h-[54px] fixed sm:hidden z-50 ease-in-out duration-300"
+        className="flex justify-center items-center w-[54px] h-[54px] fixed sm:hidden z-50 ease-in-out duration-200"
         style={{
           top: `${toggle ? "30px" : "20px"}`,
           right: `${toggle ? "30px" : "20px"}`,
         }}
       >
-        <div className="absolute w-full h-full rounded-full bg-gradient-to-r from-indigo-800 to-indigo-900 opacity-80"></div>
-        <div className="absolute w-[50px] h-[50px] rounded-full bg-black"></div>
+        <div
+          className={`absolute w-full h-full rounded-full ease-in-out duration-300 ${
+            toggle ? "bg-black" : "bg-indigo-500"
+          } opacity-80`}
+        ></div>
+        <div
+          className={`absolute w-[50px] h-[50px] rounded-full ease-in-out duration-300 ${
+            toggle ? "bg-indigo-500" : "bg-black"
+          }`}
+        ></div>
         <img
           src={toggle ? close : menu}
           alt="menu"
           className="absolute w-[22px] h-[22px]"
           onClick={() => setToggle((prev) => !prev)}
           style={{
-            filter:
-              "invert(52%) sepia(86%) saturate(6775%) hue-rotate(239deg) brightness(99%) contrast(105%)",
+            filter: `${
+              toggle
+                ? "invert(100%) sepia(0%) saturate(0%) hue-rotate(326deg) brightness(96%) contrast(104%)"
+                : "invert(52%) sepia(86%) saturate(6775%) hue-rotate(239deg) brightness(99%) contrast(105%)"
+            }`,
           }}
         />
       </div>

@@ -28,6 +28,7 @@ import kicad from "./kicad.png";
 import ruckusEQ from "./photos/ruckusEQ.png";
 import geomixer from "./photos/geomixer.png";
 import redditClone from "./photos/redditClone.png";
+import noise from "./noise.gif"
 
 export {
   menu,
@@ -60,4 +61,5 @@ export {
   ruckusEQ,
   geomixer,
   redditClone,
+  noise,
 };

@@ -1,10 +1,16 @@
-import React, {
-  ReactNode,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+/*  
+    --- StaticMarquee.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
+import React, { ReactNode, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

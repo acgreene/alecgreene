@@ -1,4 +1,15 @@
-import { Divider } from "@chakra-ui/react";
+/*  
+    --- Footer.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import React from "react";
 import StaticMarquee from "./Home/StaticMarquee";
 import SphereAnimation from "./SphereAnimation/SphereAnimation";

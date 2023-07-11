@@ -1,11 +1,19 @@
-import { windowScrollVelocity } from "../../recoil/atoms";
-import { useRecoilState } from "recoil";
+/*  
+    --- Hero.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import DynamicMarquee from "./DynamicMarquee";
-import { headshot_cropped, headshot_transparent } from "../../assets";
 
 const Hero = () => {
   const marquee_speed = 0.25;
-  const [scrollVel, setScrollVel] = useRecoilState(windowScrollVelocity);
   return (
     <div className="flex flex-col justify-center items-center w-full md:flex-row h-full">
       <div className="relative flex flex-col justify-start items-center w-full h-screen pt-[150px]">

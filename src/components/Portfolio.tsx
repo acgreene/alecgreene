@@ -1,4 +1,16 @@
-import { ruckusEQ, geomixer, redditClone } from "../assets";
+/*  
+    --- Portfolio.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
+import { ruckusEQ, redditClone } from "../assets";
 import PortfolioItem from "./PortfolioItem";
 
 const Portfolio = () => {

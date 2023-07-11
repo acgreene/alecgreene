@@ -1,9 +1,19 @@
+/*  
+    --- DynamicMarquee.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import { Icon } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import { BsCodeSlash } from "react-icons/bs";
 import { GiSoundWaves } from "react-icons/gi";
-// import { useRecoilState } from "recoil";
-// import { windowScrollVelocity } from "../../recoil/atoms";
 
 interface DynamicMarqueeProps {
   currentTranslation: number;
@@ -16,11 +26,6 @@ const DynamicMarquee: React.FC<DynamicMarqueeProps> = ({
   speed,
   color,
 }) => {
-  // const [scrollVel, setScrollVel] = useRecoilState(windowScrollVelocity);
-
-  // const [currentMarqueeTranslation, setCurrentMarqueeTranslation] =
-  //   useState<any>(currentTranslation);
-
   class LoopingElement {
     element: HTMLElement;
     currentTranslation: number;

@@ -1,3 +1,15 @@
+/*  
+    --- ExplorationCard.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import { Card, Flex, Heading, Icon } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
 import { IconType } from "react-icons";

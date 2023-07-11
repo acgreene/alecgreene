@@ -1,5 +1,16 @@
-import React from "react";
-import { useState, useEffect, useRef, useLayoutEffect } from "react";
+/*  
+    --- Cursor.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
+import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useRecoilValue } from "recoil";
 import { cursorState } from "../recoil/atoms";
@@ -40,18 +51,18 @@ const Cursor = () => {
       });
     };
 
-    const handleCursorScroll = (e: any) => {
+    const handleCursorScroll = () => {
       setCursorPos({
         left: mouseLeft,
         top: mouseTop + window.scrollY,
       });
     };
 
-    const handleMouseDown = (e: any) => {
+    const handleMouseDown = () => {
       setIsPressing(true);
     };
 
-    const handleMouseUp = (e: any) => {
+    const handleMouseUp = () => {
       setIsPressing(false);
     };
 

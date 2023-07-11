@@ -1,3 +1,15 @@
+/*  
+    --- EducationExperience.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import React from "react";
 
 type EducationExperienceProps = {};

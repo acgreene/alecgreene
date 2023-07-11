@@ -1,3 +1,15 @@
+/*  
+    --- Explorations.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import { SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import {

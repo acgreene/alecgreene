@@ -1,7 +1,15 @@
-import { Flex, SimpleGrid, Stack } from "@chakra-ui/react";
-import { useRecoilState } from "recoil";
-import { cursorState, windowScroll } from "../../recoil/atoms";
-import { useEffect } from "react";
+/*  
+    --- About.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import EducationExperience from "./EducationExperience";
 import Explorations from "../Explorations/Explorations";
 

@@ -1,4 +1,14 @@
-import React from "react";
+/*  
+    --- Blog.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
 
 const Blog = () => {
   return (

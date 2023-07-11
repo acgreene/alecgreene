@@ -1,4 +1,16 @@
-import React, { useEffect, useState } from "react";
+/*  
+    --- NavBar.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import {
   cursorState,

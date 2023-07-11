@@ -1,7 +1,17 @@
-import React from "react";
+/*  
+    --- ProgressBar.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import { useRecoilState } from "recoil";
 import { maxScroll, windowScroll } from "../recoil/atoms";
-import { primaryColor } from "../recoil/atoms";
 
 const ProgressBar = () => {
   const [scrollPos, setScrollPos] = useRecoilState(windowScroll);

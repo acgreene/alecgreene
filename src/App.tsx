@@ -1,20 +1,27 @@
+/*  
+    --- App.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import Cursor from "./components/Cursor";
-import NavBar from "./components/NavBar";
-import About from "./components/About/About";
-import Blog from "./components/Blog";
-import Portfolio from "./components/Portfolio";
-import { useRecoilState } from "recoil";
-import { windowScroll, windowScrollVelocity } from "./recoil/atoms";
 import ProgressBar from "./components/ProgressBar";
-import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home/Home";
 import Logo from "./components/Logo";
-import { noise } from "./assets";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import Portfolio from "./components/Portfolio";
+import Blog from "./components/Blog";
 import Footer from "./components/Footer";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const [scrollVel, setScrollVel] = useRecoilState(windowScrollVelocity);
-
   return (
     <div className="bg-black relative top-0 left-0 w-full overflow-hidden overscroll-none sm:cursor-none select-none">
       <Cursor />

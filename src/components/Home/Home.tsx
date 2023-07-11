@@ -1,9 +1,19 @@
+/*  
+    --- Home.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import React from "react";
 import Hero from "./Hero";
-import About from "../About/About";
-import DynamicMarquee from "./DynamicMarquee";
 import ExpertiseCard from "./ExpertiseCard";
-import { headshot_cropped, headshot_transparent } from "../../assets";
+import Spotify from "../../spotify/Spotify";
 
 type HomeProps = {};
 
@@ -14,19 +24,12 @@ const Home: React.FC<HomeProps> = () => {
         <Hero />
       </div>
       <div className="flex justify-center items-center w-full">
-        <span className="text-white text-xl mx-12">
+        <span className="text-white text-lg mx-6">
           I offer solutions for ambitious projects in the domains of technology
           and music, and work with studios, individuals, groups, and businesses
-          to bring life into unique concepts & designs. If you have any requests
-          or questions, please don't hesitate to
-          <div
-            className="underline text-blue-400"
-            onClick={() =>
-              (window.location.href = "mailto:aleccgreene@gmail.com")
-            }
-          >
-            reach out
-          </div>
+          to bring life into unique concepts. I am available for project-based
+          work, and if you have any requests or questions, please don't hesitate
+          to reach out.
         </span>
       </div>
       <div className="mb-96 mt-[225px]">
@@ -84,6 +87,12 @@ const Home: React.FC<HomeProps> = () => {
               ]}
             />
           </div>
+        </div>
+      </div>
+      <div className="flex flex-col w-full h-full">
+        <h1 className="text-white text-4xl">what i'm listening to</h1>
+        <div className="w-full h-full flex flex-col">
+          <Spotify />
         </div>
       </div>
     </div>

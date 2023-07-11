@@ -1,8 +1,20 @@
+/*  
+    --- PortfolioItem.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import React, { useState } from "react";
 import { SiGithub } from "react-icons/si";
 import { useRecoilState } from "recoil";
 import { cursorState } from "../recoil/atoms";
-import { Icon, Image, Stack } from "@chakra-ui/react";
+import { Icon, Image } from "@chakra-ui/react";
 
 type PortfolioItemProps = {
   title: string;

@@ -1,3 +1,15 @@
+/*  
+    --- Logo.tsx ---
+    Copyright © 2023 Alec Greene - All Rights Reserved.
+    Author: Alec Greene
+
+    About: 
+        * 
+
+    TO DO: 
+        * 
+*/
+
 import React, { useState } from "react";
 import { windowScroll } from "../recoil/atoms";
 import { useRecoilState } from "recoil";
@@ -11,7 +23,7 @@ interface StyleObject {
 }
 
 const Logo: React.FC<LogoProps> = () => {
-  const [scrollPos, setScrollPos] = useRecoilState(windowScroll);
+  const [scrollPos] = useRecoilState(windowScroll);
   const [toggle, setToggle] = useState<Boolean>(false);
 
   const scrollPosTrigger = 75;

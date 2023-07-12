@@ -4,16 +4,16 @@
     Author: Alec Greene
 
     About: 
-        * 
+      
 
     TO DO: 
         * 
 */
 
 import React from "react";
-import styles from "./SphereAnimation.module.css";
+import styles from "./WireframeGlobe.module.css";
 
-const SphereAnimation: React.FC = () => {
+const WireframeGlobe: React.FC = () => {
   const slices = 9;
   const angle = 360 / slices;
 
@@ -39,4 +39,4 @@ const SphereAnimation: React.FC = () => {
   );
 };
 
-export default SphereAnimation;
+export default WireframeGlobe;

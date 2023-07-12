@@ -1,19 +1,19 @@
 /*  
-    --- About.tsx ---
+    --- Resume.tsx ---
     Copyright © 2023 Alec Greene - All Rights Reserved.
     Author: Alec Greene
 
     About: 
-        * 
+        My virtual resume.
 
     TO DO: 
         * 
 */
 
 import EducationExperience from "./EducationExperience";
-import Explorations from "../Explorations/Explorations";
+import Explorations from "./Explorations/Explorations";
 
-const About = () => {
+const Resume = () => {
   return (
     <div
       id="resume"
@@ -28,4 +28,4 @@ const About = () => {
     </div>
   );
 };
-export default About;
+export default Resume;

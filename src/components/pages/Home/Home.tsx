@@ -4,7 +4,7 @@
     Author: Alec Greene
 
     About: 
-        * 
+      
 
     TO DO: 
         * 
@@ -12,8 +12,9 @@
 
 import React from "react";
 import Hero from "./Hero";
-import ExpertiseCard from "./ExpertiseCard";
-import Spotify from "../../spotify/Spotify";
+import InfoCard from "../../objects/InfoCard";
+import Spotify from "../../../spotify/Spotify";
+import DynamicMarquee from "../../objects/DynamicMarquee";
 
 type HomeProps = {};
 
@@ -22,14 +23,22 @@ const Home: React.FC<HomeProps> = () => {
     <div className="w-full h-full sm:px-16">
       <div className="mb-24">
         <Hero />
+        <div className="relative w-full h-full flex flex-col justify-center items-center mt-24 text-white">
+          <div
+            className={`relative w-full items-center flex flex-row justify-center text-indigo-400`}
+            style={{ transform: "rotate(-5deg)" }}
+          >
+            <DynamicMarquee currentTranslation={0} speed={0.25} color={""} />
+            <DynamicMarquee currentTranslation={-100} speed={0.25} color={""} />
+          </div>
+        </div>
       </div>
       <div className="flex justify-center items-center w-full">
         <span className="text-white text-lg mx-6">
-          I offer solutions for ambitious projects in the domains of technology
-          and music, and work with studios, individuals, groups, and businesses
-          to bring life into unique concepts. I am available for project-based
-          work, and if you have any requests or questions, please don't hesitate
-          to reach out.
+          I offer solutions for ambitious projects in the fields of technology
+          and music. I work with studios, individuals, groups, and businesses to
+          bring unique concepts to life. I am available for project-based work,
+          and if you have any requests or questions, I'm here to help.
         </span>
       </div>
       <div className="mb-96 mt-[225px]">
@@ -47,7 +56,7 @@ const Home: React.FC<HomeProps> = () => {
             className="absolute w-full h-1/3 top-0"
             style={{ perspective: "320px" }}
           >
-            <ExpertiseCard
+            <InfoCard
               title="software"
               subtitles={[
                 "full-stack web development",
@@ -61,7 +70,7 @@ const Home: React.FC<HomeProps> = () => {
             className="absolute w-full h-1/3 top-1/3"
             style={{ perspective: "320px" }}
           >
-            <ExpertiseCard
+            <InfoCard
               title="audio"
               subtitles={[
                 "mixing, mastering",
@@ -76,7 +85,7 @@ const Home: React.FC<HomeProps> = () => {
             className="absolute w-full h-1/3 top-2/3"
             style={{ perspective: "320px" }}
           >
-            <ExpertiseCard
+            <InfoCard
               title="consulting"
               subtitles={[
                 "software architecture",

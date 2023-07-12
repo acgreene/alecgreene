@@ -4,22 +4,22 @@
     Author: Alec Greene
 
     About: 
-        * 
+        A card with a title and bullet points. Animates on click. 
 
     TO DO: 
         * 
 */
 
-import { Divider, Icon } from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { BsArrowReturnRight } from "react-icons/bs";
 
-type ExpertiseCardProps = {
+type InfoCardProps = {
   title: string;
   subtitles: string[];
 };
 
-const ExpertiseCard: React.FC<ExpertiseCardProps> = ({ title, subtitles }) => {
+const InfoCard: React.FC<InfoCardProps> = ({ title, subtitles }) => {
   const [toggle, setToggle] = useState<Boolean>(false);
   return (
     <div
@@ -63,4 +63,4 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({ title, subtitles }) => {
     </div>
   );
 };
-export default ExpertiseCard;
+export default InfoCard;

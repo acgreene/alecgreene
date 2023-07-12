@@ -1,19 +1,19 @@
-/*  
+/*
     --- PortfolioItem.tsx ---
     Copyright © 2023 Alec Greene - All Rights Reserved.
     Author: Alec Greene
 
-    About: 
-        * 
+    About:
+        *
 
-    TO DO: 
-        * 
+    TO DO:
+        *
 */
 
 import React, { useState } from "react";
 import { SiGithub } from "react-icons/si";
 import { useRecoilState } from "recoil";
-import { cursorState } from "../recoil/atoms";
+import { cursorState } from "../../../recoil/atoms";
 import { Icon, Image } from "@chakra-ui/react";
 
 type PortfolioItemProps = {
@@ -55,10 +55,10 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
     <div className="mb-28 sm:mb-36 lg:mb-52">
       {isImageLeft && window.innerWidth > 768 ? (
         <div className="flex flex-col justify-between items-center sm:flex-row md:justify-around">
-          <Image
+          <img
             src={image}
             className="object-contain w-full h-full sm:w-1/2 sm:mr-8"
-          ></Image>
+          />
           <div className="flex flex-col justify-center mb-8 sm:mb-0">
             <div className="flex flex-row items-center">
               <h1 className="text-2xl font-bold">{title}</h1>
@@ -106,10 +106,8 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
             <span className="text-md mt-6">{description}</span>
             <span className="text-md mt-6">Technologies: {technologies}.</span>
           </div>
-          <Image
-            src={image}
-            className="object-contain w-full h-full sm:w-1/2"
-          ></Image>
+
+          <img src={image} className="object-contain w-full h-full sm:w-1/2" />
         </div>
       )}
     </div>

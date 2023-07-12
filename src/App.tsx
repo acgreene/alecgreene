@@ -4,33 +4,31 @@
     Author: Alec Greene
 
     About: 
-        * 
+        Holds all of the design and logic for my website.
 
     TO DO: 
         * 
 */
 
-import Cursor from "./components/Cursor";
-import ProgressBar from "./components/ProgressBar";
-import Logo from "./components/Logo";
-import NavBar from "./components/NavBar";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Portfolio from "./components/Portfolio";
-import Blog from "./components/Blog";
-import Footer from "./components/Footer";
+import Cursor from "./components/objects/Cursor";
+import ProgressBar from "./components/objects/ProgressBar";
+import Menu from "./components/objects/Menu";
+import Home from "./components/pages/Home/Home";
+import Resume from "./components/pages/Resume/Resume";
+import Portfolio from "./components/pages/Portfolio/Portfolio";
+import Blog from "./components/pages/Blog/Blog";
+import Footer from "./components/objects/Footer";
 import { Route, Routes } from "react-router-dom";
+import { scrollStates } from "./recoil/scrollStates";
 
 function App() {
+  scrollStates();
   return (
     <div className="bg-black relative top-0 left-0 w-full overflow-hidden overscroll-none sm:cursor-none select-none">
       <Cursor />
+      <Menu />
       <div className="sm:hidden">
         <ProgressBar />
-        <Logo />
-      </div>
-      <div className="xl:max-w-[1280px] w-full">
-        <NavBar />
       </div>
       <div className="flex justify-center items-start w-full px-6">
         <Routes>
@@ -46,7 +44,7 @@ function App() {
             path="/resume"
             element={
               <div>
-                <About />
+                <Resume />
               </div>
             }
           ></Route>

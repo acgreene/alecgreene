@@ -4,18 +4,19 @@
     Author: Alec Greene
 
     About: 
-        * 
+        A mobile-only progress bar that displays the users scroll amount
+        down the left hand side of the screen.
 
     TO DO: 
         * 
 */
 
 import { useRecoilState } from "recoil";
-import { maxScroll, windowScroll } from "../recoil/atoms";
+import { maxScroll, windowScroll } from "../../recoil/atoms";
 
 const ProgressBar = () => {
-  const [scrollPos, setScrollPos] = useRecoilState(windowScroll);
-  const [maxScrollY, setMaxScrollY] = useRecoilState(maxScroll);
+  const [scrollPos] = useRecoilState(windowScroll);
+  const [maxScrollY] = useRecoilState(maxScroll);
 
   return (
     <div

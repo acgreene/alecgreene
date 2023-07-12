@@ -1,32 +1,33 @@
 /*  
-    --- Logo.tsx ---
+    --- Menu.tsx ---
     Copyright © 2023 Alec Greene - All Rights Reserved.
     Author: Alec Greene
 
     About: 
-        * 
+        A navigation menu that holds the links to traverse my website, 
+        as well as some of my socials.
 
     TO DO: 
         * 
 */
 
 import React, { useState } from "react";
-import { windowScroll } from "../recoil/atoms";
+import { windowScroll } from "../../recoil/atoms";
 import { useRecoilState } from "recoil";
-import { menu, close } from "../assets";
-import { navLinks } from "../constants";
+import { menu, close } from "../../assets";
+import { navLinks } from "../../constants";
 
-type LogoProps = {};
+type MenuProps = {};
 
 interface StyleObject {
   [key: string]: string;
 }
 
-const Logo: React.FC<LogoProps> = () => {
+const Menu: React.FC<MenuProps> = () => {
   const [scrollPos] = useRecoilState(windowScroll);
   const [toggle, setToggle] = useState<Boolean>(false);
 
-  const scrollPosTrigger = 75;
+  const scrollPosTrigger: number = 75;
 
   const background_notoggle: StyleObject = {
     height: `${scrollPos > scrollPosTrigger ? "35px" : "150px"}`,
@@ -47,7 +48,6 @@ const Logo: React.FC<LogoProps> = () => {
     paddingRight: `24px`,
     top: "20px",
     left: "20px",
-    // padding: "40px",
   };
 
   return (
@@ -172,7 +172,7 @@ const Logo: React.FC<LogoProps> = () => {
 
       {/* toggle icon */}
       <div
-        className="flex justify-center items-center w-[54px] h-[54px] fixed sm:hidden z-50 ease-in-out duration-500"
+        className="flex justify-center items-center w-[54px] h-[54px] fixed z-50 ease-in-out duration-500"
         style={{
           top: `${toggle ? "60px" : "20px"}`,
           right: `${toggle ? "40px" : "20px"}`,
@@ -205,4 +205,4 @@ const Logo: React.FC<LogoProps> = () => {
     </div>
   );
 };
-export default Logo;
+export default Menu;

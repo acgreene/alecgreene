@@ -4,15 +4,15 @@
     Author: Alec Greene
 
     About: 
-        * 
+      The bottom section on every web page. 
 
     TO DO: 
         * 
 */
 
 import React from "react";
-import StaticMarquee from "./Home/StaticMarquee";
-import SphereAnimation from "./SphereAnimation/SphereAnimation";
+import StaticMarquee from "./StaticMarquee";
+import WireframeGlobe from "./WireframeGlobe/WireframeGlobe";
 
 type FooterProps = {};
 
@@ -22,11 +22,11 @@ const Footer: React.FC<FooterProps> = () => {
       <div className="flex flex-row w-full h-2/5 border-t-2 border-indigo-500">
         <div className="flex flex-col w-2/3 h-full">
           <div className="w-full h-1/2 justify-start pl-16 items-start flex">
-            <SphereAnimation />
+            <WireframeGlobe />
           </div>
 
           <div className="w-full h-1/2 justify-start items-start flex px-8">
-            Based in Chicago but active worldwide.
+            Based in Chicago. Active worldwide.
           </div>
         </div>
         <div className="flex flex-col w-1/3 h-full border-l-2 border-indigo-500 justify-center items-center">

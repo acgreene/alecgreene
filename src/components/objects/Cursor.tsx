@@ -4,7 +4,7 @@
     Author: Alec Greene
 
     About: 
-        * 
+        A custom cursor that replaces the stock cursor on wide screen devices. 
 
     TO DO: 
         * 
@@ -13,7 +13,7 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useRecoilValue } from "recoil";
-import { cursorState } from "../recoil/atoms";
+import { cursorState } from "../../recoil/atoms";
 
 interface CursorPosition {
   left: number;
@@ -21,17 +21,18 @@ interface CursorPosition {
 }
 
 const Cursor = () => {
-  // references to DOM objects for GSAP
-  const cursorRef = useRef<HTMLDivElement>(null);
-  const outerCircleRef = useRef<HTMLDivElement>(null);
-  const innerCircleRef = useRef<HTMLDivElement>(null);
-  const centerCircleRef = useRef<HTMLDivElement>(null);
-  const centerCircleRef2 = useRef<HTMLDivElement>(null);
+  // references for gsap
+  const cursorWrapperRef = useRef<HTMLDivElement>(null);
+  const cursorBaseRef = useRef<HTMLDivElement>(null);
+  const cursorLayerRef = useRef<HTMLDivElement>(null);
 
-  // TO DO: read whether cursor is in active state from recoil.
+  const innerBackgroundCircleRef = useRef<HTMLDivElement>(null);
+  const outerBackgroundCircleRef = useRef<HTMLDivElement>(null);
+
+  // recoil states
   const isCursorActive = useRecoilValue(cursorState);
 
-  // states to store cursor movement
+  // local states
   const [cursorPos, setCursorPos] = useState<CursorPosition>({
     left: 0,
     top: 0,
@@ -42,29 +43,29 @@ const Cursor = () => {
     let mouseLeft: number,
       mouseTop: number = 0;
 
-    const handleCursorMove = (e: any) => {
+    function handleCursorMove(e: MouseEvent): void {
       mouseLeft = e.clientX;
       mouseTop = e.clientY;
       setCursorPos({
         left: mouseLeft,
         top: mouseTop + window.scrollY,
       });
-    };
+    }
 
-    const handleCursorScroll = () => {
+    function handleCursorScroll(): void {
       setCursorPos({
         left: mouseLeft,
         top: mouseTop + window.scrollY,
       });
-    };
+    }
 
-    const handleMouseDown = () => {
+    function handleMouseDown(): void {
       setIsPressing(true);
-    };
+    }
 
-    const handleMouseUp = () => {
+    function handleMouseUp(): void {
       setIsPressing(false);
-    };
+    }
 
     window.addEventListener("mousemove", handleCursorMove);
     window.addEventListener("scroll", handleCursorScroll);
@@ -81,13 +82,13 @@ const Cursor = () => {
 
   useEffect(() => {
     // overall cursor movement
-    gsap.to(cursorRef.current, {
+    gsap.to(cursorWrapperRef.current, {
       left: cursorPos.left,
       top: cursorPos.top,
     });
 
     // outer ring color change
-    gsap.to(outerCircleRef.current, {
+    gsap.to(outerBackgroundCircleRef.current, {
       backgroundColor: `rgb(${cursorPos.left / 9}, ${
         cursorPos.top / 6
       }, ${255})`,
@@ -96,23 +97,23 @@ const Cursor = () => {
     let timeToActive = 0.1;
 
     if (isPressing) {
-      gsap.to(innerCircleRef.current, {
+      gsap.to(innerBackgroundCircleRef.current, {
         height: "0px",
         width: "0px",
         duration: timeToActive,
       });
-      gsap.to(outerCircleRef.current, {
+      gsap.to(outerBackgroundCircleRef.current, {
         height: "32px",
         width: "32px",
         duration: 0.1,
       });
-      gsap.to(centerCircleRef.current, {
+      gsap.to(cursorBaseRef.current, {
         borderBottom: "solid 18px black",
         borderLeft: "solid 8px transparent",
         borderRight: "solid 8px transparent",
         duration: 0.1,
       });
-      gsap.to(centerCircleRef2.current, {
+      gsap.to(cursorLayerRef.current, {
         borderBottom: `solid 14px rgb(${cursorPos.left / 9}, ${
           cursorPos.top / 6
         }, ${255})`,
@@ -125,24 +126,24 @@ const Cursor = () => {
     // inner circle blow up
     else if (isCursorActive && isPressing === false) {
       // active
-      gsap.to(innerCircleRef.current, {
+      gsap.to(innerBackgroundCircleRef.current, {
         height: "0px",
         width: "0px",
         duration: timeToActive,
       });
-      gsap.to(outerCircleRef.current, {
+      gsap.to(outerBackgroundCircleRef.current, {
         height: "92px",
         width: "92px",
         duration: 0.1,
       });
-      gsap.to(centerCircleRef.current, {
+      gsap.to(cursorBaseRef.current, {
         borderBottom: "solid 18px black",
         borderLeft: "solid 8px transparent",
         borderRight: "solid 8px transparent",
         duration: 0.1,
         scale: 1,
       });
-      gsap.to(centerCircleRef2.current, {
+      gsap.to(cursorLayerRef.current, {
         scale: 1,
         borderBottom: `solid 14px rgb(${cursorPos.left / 9}, ${
           cursorPos.top / 6
@@ -155,24 +156,24 @@ const Cursor = () => {
 
     // normal
     else {
-      gsap.to(innerCircleRef.current, {
+      gsap.to(innerBackgroundCircleRef.current, {
         height: "58px",
         width: "58px",
         duration: timeToActive,
       });
-      gsap.to(outerCircleRef.current, {
+      gsap.to(outerBackgroundCircleRef.current, {
         height: "64px",
         width: "64px",
         duration: 0.1,
       });
-      gsap.to(centerCircleRef.current, {
+      gsap.to(cursorBaseRef.current, {
         scale: 1,
         borderBottom: "solid 18px white",
         borderLeft: "solid 8px transparent",
         borderRight: "solid 8px transparent",
         duration: 0.1,
       });
-      gsap.to(centerCircleRef2.current, {
+      gsap.to(cursorLayerRef.current, {
         scale: 1,
         borderBottom: `solid 14px black`,
         borderLeft: "solid 6px transparent",
@@ -192,7 +193,7 @@ const Cursor = () => {
       >
         <div
           className="absolute z-40 pointer-events-none"
-          ref={centerCircleRef}
+          ref={cursorBaseRef}
           style={{
             background: "transparent",
             borderBottom: "solid 18px rgb(255, 255, 255)",
@@ -203,7 +204,7 @@ const Cursor = () => {
         ></div>
         <div
           className="absolute z-40 pointer-events-none"
-          ref={centerCircleRef2}
+          ref={cursorLayerRef}
           style={{
             background: "transparent",
             borderBottom: "solid 14px rgb(0, 0, 0)",
@@ -216,15 +217,15 @@ const Cursor = () => {
       </div>
       <div
         className={`absolute items-center justify-center hidden sm:flex z-20 pointer-events-none`}
-        ref={cursorRef}
+        ref={cursorWrapperRef}
       >
         <div
           className="absolute rounded-full pointer-events-none"
-          ref={outerCircleRef}
+          ref={outerBackgroundCircleRef}
         ></div>
         <div
           className="absolute bg-black rounded-full pointer-events-none"
-          ref={innerCircleRef}
+          ref={innerBackgroundCircleRef}
         ></div>
       </div>
     </div>

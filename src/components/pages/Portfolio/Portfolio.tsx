@@ -10,7 +10,7 @@
         * 
 */
 
-import { ruckusEQ, redditClone } from "../assets";
+import { ruckusEQ, redditClone } from "../../../assets";
 import PortfolioItem from "./PortfolioItem";
 
 const Portfolio = () => {
@@ -42,19 +42,6 @@ const Portfolio = () => {
           isImageLeft={false}
           githubLink="https://github.com/acgreene/RuckusEQ"
         ></PortfolioItem>
-        {/* <PortfolioItem
-          title="Geomixer"
-          caption="Web-app controlled device that applied custom DSP FX to real time audio."
-          description="Collaborated with a project team to create 
-                      a suite of audio DSP algorithms to process real-time audio on a microcontroller. 
-                      Effects included reverb, chorus, phase shifter, and distortion.
-                      Created a web app that served as the GUI to control the audio 
-                      processing on the microcontroller via UART."
-          technologies="Arduino, C++, JS, HTML, CSS, node JS"
-          image={geomixer}
-          isImageLeft={true}
-          githubLink="https://github.com/acgreene/geomixer"
-        ></PortfolioItem> */}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@
     Author: Alec Greene
 
     About: 
-        * 
+        * All pieces of state that can be shared and accessed by multiple components.
 
     TO DO: 
         * 

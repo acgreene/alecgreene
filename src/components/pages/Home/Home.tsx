@@ -28,13 +28,13 @@ const Home: React.FC<HomeProps> = () => {
             className={`relative w-full items-center flex flex-row justify-center text-indigo-400`}
             style={{ transform: "rotate(-5deg)" }}
           >
-            <DynamicMarquee currentTranslation={0} speed={0.25} color={""} />
-            <DynamicMarquee currentTranslation={-100} speed={0.25} color={""} />
+            <DynamicMarquee currentTranslation={0} speed={0.15} color={""} />
+            <DynamicMarquee currentTranslation={-100} speed={0.15} color={""} />
           </div>
         </div>
       </div>
       <div className="flex justify-center items-center w-full">
-        <span className="text-white text-lg mx-6">
+        <span className="text-white text-2xl mx-6">
           I offer solutions for ambitious projects in the fields of technology
           and music. I work with studios, individuals, groups, and businesses to
           bring unique concepts to life. I am available for project-based work,
@@ -46,7 +46,7 @@ const Home: React.FC<HomeProps> = () => {
           className="flex relative w-full h-full items-center justify-center"
           // style={{ transform: "translateX(-10px)" }}
         >
-          <span className="text-white text-4xl">areas of expertise</span>
+          <span className="text-white text-6xl ml-8">Areas of expertise</span>
         </div>
         <div
           className="relative w-[93%] h-[40vh]"
@@ -57,7 +57,7 @@ const Home: React.FC<HomeProps> = () => {
             style={{ perspective: "320px" }}
           >
             <InfoCard
-              title="software"
+              title="Software"
               subtitles={[
                 "full-stack web development",
                 "JUCE audio plug-ins",
@@ -71,7 +71,7 @@ const Home: React.FC<HomeProps> = () => {
             style={{ perspective: "320px" }}
           >
             <InfoCard
-              title="audio"
+              title="Audio"
               subtitles={[
                 "mixing, mastering",
                 "session guitar",
@@ -86,7 +86,7 @@ const Home: React.FC<HomeProps> = () => {
             style={{ perspective: "320px" }}
           >
             <InfoCard
-              title="consulting"
+              title="Consulting"
               subtitles={[
                 "software architecture",
                 "support in audio mixing",

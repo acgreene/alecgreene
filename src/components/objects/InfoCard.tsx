@@ -10,9 +10,10 @@
         * 
 */
 
-import { Icon } from "@chakra-ui/react";
+import { Icon, background } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { BsArrowReturnRight } from "react-icons/bs";
+import { IoIosArrowBack, IoIosArrowDown } from "react-icons/io";
 
 type InfoCardProps = {
   title: string;
@@ -38,13 +39,29 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, subtitles }) => {
         height: "275px",
       }}
     >
-      <h1
-        className={`text-3xl my-4 ml-6 ${
-          toggle ? "text-black" : "text-indigo-500"
-        }`}
-      >
-        {title}
-      </h1>
+      <div className="flex flex-row items-center">
+        <h1
+          className={`text-4xl my-4 ml-6 relative ${
+            toggle ? "text-black" : "text-indigo-500"
+          }`}
+        >
+          {title}
+        </h1>
+        <div className="right-0 top-0 flex absolute mr-5 mt-6 ease-out items-center justify-center">
+          <div
+            className={`absolute w-[125%] h-[125%] ${
+              toggle ? "bg-neutral-700" : "bg-indigo-400"
+            } opacity-10 z-0 rounded-lg`}
+          ></div>
+          <Icon
+            as={toggle ? IoIosArrowBack : IoIosArrowDown}
+            boxSize={5}
+            color={toggle ? "black" : "white"}
+            className="z-10"
+          />
+        </div>
+      </div>
+
       <ul>
         {subtitles.map((subtitle, index) => (
           <li
@@ -53,7 +70,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, subtitles }) => {
               toggle ? "flex" : "display-none"
             } ml-6 flex-col`}
           >
-            <div className="flex flex-row justify-start items-center">
+            <div className="flex flex-row justify-start items-center text-xl">
               <Icon as={BsArrowReturnRight} boxSize={5} className="mr-2" />
               {subtitle}
             </div>

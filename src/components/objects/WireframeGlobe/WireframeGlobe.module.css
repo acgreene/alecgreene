@@ -18,10 +18,10 @@ html {
 .sphere>div {
     border: solid 1px rgb(99 102 241);
     border-radius: 60%;
-    height: 50px;
+    height: 75px;
     opacity: 0.75;
     position: absolute;
-    width: 50px;
+    width: 75px;
 }
 
 .slice.equator {
@@ -36,12 +36,12 @@ html {
 }
 
 .slice.cancer {
-    transform: translateY(-9px) rotateX(90deg);
+    transform: translateY(-16px) rotateX(90deg);
     /* border: solid 2px rgb(255 255 255); */
 }
 
 .slice.capricorn {
-    transform: translateY(9px) rotateX(90deg);
+    transform: translateY(16px) rotateX(90deg);
     /* border: solid 2px rgb(255 255 255); */
 }
 

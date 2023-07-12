@@ -14,8 +14,8 @@ const Hero = () => {
   return (
     <div className="flex flex-col justify-center items-center w-full md:flex-row h-full">
       <div className="relative flex flex-col justify-start items-center w-full h-screen pt-[150px]">
-        <div className="text-white text-3xl w-full h-full flex relative items-center">
-          endlessly learning, <br />
+        <div className="text-white text-4xl w-full h-full flex relative items-center">
+          Endlessly learning, <br />
           <br />
           inpired through technical and creative mediums, <br />
           <br />

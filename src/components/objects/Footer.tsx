@@ -18,18 +18,19 @@ type FooterProps = {};
 
 const Footer: React.FC<FooterProps> = () => {
   return (
-    <div className="flex flex-col w-full h-[420px] text-indigo-500 text-lg">
+    <div className="flex flex-col w-full h-[600px] text-indigo-500 text-lg">
       <div className="flex flex-row w-full h-2/5 border-t-2 border-indigo-500">
         <div className="flex flex-col w-2/3 h-full">
-          <div className="w-full h-1/2 justify-start pl-16 items-start flex">
+          <div className="w-full h-2/3 justify-center items-center flex pb-24">
             <WireframeGlobe />
           </div>
 
-          <div className="w-full h-1/2 justify-start items-start flex px-8">
-            Based in Chicago. Active worldwide.
+          <div className="w-full h-1/3 justify-center items-start flex flex-col px-8 pb-2 text-xl">
+            <span className="text-center w-full">Based in Chicago.</span>
+            <span className="text-center w-full">Active worldwide.</span>
           </div>
         </div>
-        <div className="flex flex-col w-1/3 h-full border-l-2 border-indigo-500 justify-center items-center">
+        <div className="flex flex-col w-1/3 h-full border-l-2 border-indigo-500 justify-center items-center text-xl">
           <div className="h-1/2 w-full justify-center items-center flex">
             <a
               href="https://www.linkedin.com/in/alecgreene/"
@@ -61,7 +62,7 @@ const Footer: React.FC<FooterProps> = () => {
           direction={true}
         ></StaticMarquee>
       </div>
-      <div className="flex w-full h-1/5 items-center justify-center border-t-2 border-indigo-500">
+      <div className="flex w-full h-1/5 items-center justify-center border-t-2 border-indigo-500 text-xl">
         2023 © Alec Greene
       </div>
     </div>

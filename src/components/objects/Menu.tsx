@@ -12,7 +12,7 @@
 */
 
 import React, { useState } from "react";
-import { windowScroll } from "../../recoil/atoms";
+import { windowScroll, viewportWidth } from "../../recoil/atoms";
 import { useRecoilState } from "recoil";
 import { menu, close } from "../../assets";
 import { navLinks } from "../../constants";
@@ -25,11 +25,12 @@ interface StyleObject {
 
 const Menu: React.FC<MenuProps> = () => {
   const [scrollPos] = useRecoilState(windowScroll);
+  const [windowWidth] = useRecoilState(viewportWidth);
   const [toggle, setToggle] = useState<Boolean>(false);
 
   const scrollPosTrigger: number = 75;
 
-  const background_notoggle: StyleObject = {
+  let menuStyles: StyleObject = {
     height: `${scrollPos > scrollPosTrigger ? "35px" : "150px"}`,
     width: `${scrollPos > scrollPosTrigger ? "55px" : "128px"}`,
     paddingBottom: `${scrollPos > scrollPosTrigger ? "0px" : "40px"}`,
@@ -39,22 +40,51 @@ const Menu: React.FC<MenuProps> = () => {
     left: "20px",
   };
 
-  const background_toggle: StyleObject = {
-    height: `95%`,
-    width: `90%`,
-    flexDirection: `column`,
-    paddingBottom: `0px`,
-    paddingLeft: `24px`,
-    paddingRight: `24px`,
-    top: "20px",
-    left: "20px",
+  let toggleButtonStyles: StyleObject = {
+    top: `20px`,
+    right: `20px`,
   };
+
+  // xl screens
+  if (windowWidth >= 1700) {
+    menuStyles.height = `${scrollPos > scrollPosTrigger ? "75px" : "450px"}`;
+    menuStyles.width = `${scrollPos > scrollPosTrigger ? "95px" : "384px"}`;
+    menuStyles.top = "100px";
+    menuStyles.left = "100px";
+
+    toggleButtonStyles.top = "100px";
+    toggleButtonStyles.right = "100px";
+  }
+
+  if (toggle == true) {
+    menuStyles.height = `95%`;
+    menuStyles.width = `90%`;
+    menuStyles.flexDirection = `column`;
+    menuStyles.paddingBottom = `0px`;
+    menuStyles.paddingLeft = `24px`;
+    menuStyles.paddingRight = `24px`;
+    menuStyles.top = "20px";
+    menuStyles.left = "20px";
+    menuStyles.top = "20px";
+    menuStyles.left = "20px";
+
+    toggleButtonStyles.top = "60px";
+    toggleButtonStyles.right = "40px";
+
+    if (windowWidth >= 1700) {
+      toggleButtonStyles.top = "175px";
+      toggleButtonStyles.right = "225px";
+    }
+  }
 
   return (
     <div>
       <div
-        className="fixed flex bg-indigo-500 text-2xl z-50 ease-in-out duration-500"
-        style={toggle ? background_toggle : background_notoggle}
+        className="
+          fixed flex bg-indigo-500 text-2xl z-50 ease-in-out duration-500
+          xl:text-6xl 
+          "
+        style={menuStyles}
       >
         <div
           className="w-full h-full flex"
@@ -121,8 +151,11 @@ const Menu: React.FC<MenuProps> = () => {
           </div>
         </div>
 
+        {/* menu items */}
         <div
-          className={`flex justify-center flex-col items-center top-0 bottom-0 right-0 duration-500 ease-in-out`}
+          className={`
+            flex justify-center flex-col items-center top-0 bottom-0 right-0 duration-500 ease-in-out
+            `}
           style={{
             display: `${toggle ? "flex" : "none"}`,
             width: "100%",
@@ -131,9 +164,9 @@ const Menu: React.FC<MenuProps> = () => {
         >
           <ul className="list-none flex flex-col w-full">
             {navLinks.map((nav, index) => (
-              <div className="w-full h-8 my-4" key={nav.id}>
+              <div className="w-full h-8 my-4 xl:h-20" key={nav.id}>
                 <li
-                  className={`flex justify-start font-normal text-5xl w-full
+                  className={`flex justify-start font-normal text-5xl w-full xl:justify-center xl:text-8xl
                     ${
                       index == navLinks.length - 1 ? "mr-0" : "mb-4"
                     } text-black`}
@@ -148,7 +181,11 @@ const Menu: React.FC<MenuProps> = () => {
               </div>
             ))}
           </ul>
-          <div className="flex flex-col w-full justify-start pt-8">
+          <div
+            className="
+            flex flex-col w-full justify-start pt-8 
+            xl:text-3xl xl:items-center"
+          >
             <div
               className="underline py-1"
               onClick={() =>
@@ -170,13 +207,14 @@ const Menu: React.FC<MenuProps> = () => {
         </div>
       </div>
 
-      {/* toggle icon */}
+      {/* toggle button */}
       <div
-        className="flex justify-center items-center w-[54px] h-[54px] fixed z-50 ease-in-out duration-500"
-        style={{
-          top: `${toggle ? "60px" : "20px"}`,
-          right: `${toggle ? "40px" : "20px"}`,
-        }}
+        className="
+          flex justify-center items-center w-[54px] h-[54px] fixed z-50 ease-in-out duration-500
+              xl:w-[84px] xl:h-[84px]
+          "
+        style={toggleButtonStyles}
+        onClick={() => setToggle((prev) => !prev)}
       >
         <div
           className={`absolute w-full h-full rounded-full ease-in-out duration-300 ${
@@ -186,13 +224,17 @@ const Menu: React.FC<MenuProps> = () => {
         <div
           className={`absolute w-[50px] h-[50px] rounded-full ease-in-out duration-300 ${
             toggle ? "bg-indigo-500" : "bg-black"
-          }`}
+          }
+          xl:w-[78px] xl:h-[78px]
+          `}
         ></div>
         <img
           src={toggle ? close : menu}
           alt="menu"
-          className="absolute w-[22px] h-[22px]"
-          onClick={() => setToggle((prev) => !prev)}
+          className="
+            absolute w-[22px] h-[22px]
+            xl:w-[32px] xl:h-[32px]
+            "
           style={{
             filter: `${
               toggle

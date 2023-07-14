@@ -36,3 +36,13 @@ export const maxScroll = atom({
   key: "maxScroll", 
   default: 0,
 });
+
+export const viewportWidth = atom({
+  key: "viewportWidth",
+  default: window.innerWidth,
+})
+
+export const viewportHeight = atom({
+  key: "viewportHeight",
+  default: window.innerHeight,
+})

@@ -4,7 +4,7 @@
     Author: Alec Greene
 
     About: 
-      
+      The home page of my website. 
 
     TO DO: 
         * 
@@ -13,7 +13,7 @@
 import React from "react";
 import Hero from "./Hero";
 import InfoCard from "../../objects/InfoCard";
-import Spotify from "../../../spotify/Spotify";
+// import Spotify from "../../../spotify/Spotify";
 import DynamicMarquee from "../../objects/DynamicMarquee";
 
 type HomeProps = {};
@@ -98,12 +98,12 @@ const Home: React.FC<HomeProps> = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-full h-full">
+      {/* <div className="flex flex-col w-full h-full">
         <h1 className="text-white text-4xl">what i'm listening to</h1>
         <div className="w-full h-full flex flex-col">
           <Spotify />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

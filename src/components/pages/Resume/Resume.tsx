@@ -27,7 +27,10 @@ const Resume = () => {
   return (
     <div
       id="resume"
-      className="flex w-full h-full pt-[200px] justify-center items-center flex-row flex-wrap mb-6 text-white lg:pl-[500px] lg:pr-[175px]"
+      className="
+      flex w-full h-full pt-[200px] justify-center items-center flex-row flex-wrap mb-6 text-white scale-[0.9]
+      xxs:scale-[1]
+      lg:pl-[500px] lg:pr-[175px]"
     >
       <div
         className="flex relative w-full justify-center items-center p-2 m-2 hover:cursor-pointer"

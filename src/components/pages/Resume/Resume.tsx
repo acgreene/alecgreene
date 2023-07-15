@@ -10,19 +10,77 @@
         * 
 */
 
+import { BsFiletypePdf } from "react-icons/bs";
 import EducationExperience from "./EducationExperience";
-import Explorations from "./Explorations/Explorations";
+import { Icon } from "@chakra-ui/react";
 
 const Resume = () => {
+  function handlePDF() {
+    const url =
+      "https://drive.google.com/file/d/1-dZ4fB7Gc6O22ve__g7PacBbk2Mtx_G9/view?usp=sharing";
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "alecgreene.pdf";
+    link.click();
+  }
+
   return (
     <div
       id="resume"
-      className="flex justify-center items-center h-100 flex-row flex-wrap sm:mb-20 mb-6 text-white"
+      className="flex w-full h-full pt-[200px] justify-center items-center flex-row flex-wrap mb-6 text-white lg:pl-[500px] lg:pr-[175px]"
     >
-      <div className="mb-10 w-full sm:mb-20 md:mb-36">
-        <span className="text-5xl">explorations</span>
+      <div
+        className="flex relative w-full justify-center items-center p-2 m-2 hover:cursor-pointer"
+        onClick={handlePDF}
+      >
+        <div className="flex flex-row w-full h-full justify-center items-center z-10">
+          <Icon
+            as={BsFiletypePdf}
+            boxSize={6}
+            color="red"
+            className="mr-4"
+          ></Icon>
+          <span className="text-xl">PDF Download</span>
+        </div>
+        <div className="absolute w-full h-full bg-blue-100 opacity-20 z-0 rounded-xl"></div>
+      </div>
+      <div className="mb-10 w-full">
+        <span className="text-5xl">summary</span>
         <div className="w-100 h-px mt-5 mb-5 bg-white"></div>
-        <Explorations></Explorations>
+        <div className="w-full h-full justify-between">
+          <div className="my-2">
+            <span className="text-xl xl:text-2xl">ABOUT</span>
+            <div className="my-4 ml-4">
+              <span className="xl:text-2xl">
+                I am an engineer with 2 years of experience in industry, and
+                expertise in software and sound. I write full-stack web
+                applications, JUCE audio applications, and automation programs.
+              </span>
+            </div>
+          </div>
+          <div className="">
+            <span className="text-xl xl:text-2xl">SKILLS</span>
+            <div className="my-4 ml-4">
+              <div className="flex flex-row justify-around items-center xl:text-2xl">
+                <ul>
+                  <li>C++</li>
+                  <li>Python</li>
+                  <li>Swift</li>
+                </ul>
+                <ul>
+                  <li>React</li>
+                  <li>Typescript</li>
+                  <li>CSS</li>
+                </ul>
+                <ul>
+                  <li>DSP</li>
+                  <li>Sound Recording</li>
+                  <li>Audio Mixing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <EducationExperience></EducationExperience>
     </div>

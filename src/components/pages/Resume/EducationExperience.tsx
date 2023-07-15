@@ -16,12 +16,12 @@ type EducationExperienceProps = {};
 
 const EducationExperience: React.FC<EducationExperienceProps> = () => {
   return (
-    <div className="mt-10 mb-10 w-full sm:mb-20 md:mb-36">
+    <div className="w-full">
       <span className="text-5xl">education & experience</span>
       <div className="w-100 h-px mt-5 mb-5 bg-white"></div>
       <div className="flex flex-col sm:flex-row justify-between md:justify-around">
         <div className="flex flex-col">
-          <h1 className="text-xl">EDUCATION</h1>
+          <h1 className="text-xl xl:text-2xl">EDUCATION</h1>
           <div className="flex flex-row my-4">
             <div className="relative flex flex-col items-center mr-4 mt-1">
               <div className="flex items-center justify-center h-4 w-4 rounded-full bg-white z-10"></div>
@@ -50,7 +50,7 @@ const EducationExperience: React.FC<EducationExperienceProps> = () => {
           </div>
         </div>
         <div className="flex flex-col">
-          <h1 className="text-xl">EXPERIENCE</h1>
+          <h1 className="text-xl xl:text-2xl">EXPERIENCE</h1>
           <div className="flex flex-row my-4">
             <div className="relative flex flex-col items-center mr-4 mt-1">
               <div className="flex items-center justify-center h-4 w-4 rounded-full bg-white z-10"></div>
@@ -73,11 +73,11 @@ const EducationExperience: React.FC<EducationExperienceProps> = () => {
               </div>
               <div className="absolute w-px bg-white h-40 xxs:h-32"></div>
             </div>
-            <span className="mr-8 w-24">2023-Present</span>
+            <span className="mr-8 w-24">2023</span>
             <div className="w-40">
               <h2 className="font-bold">Hardware & Software Engineer</h2>
               <h2 className="text-gray-200">Area (startup)</h2>
-              <span className="text-gray-400">Remote</span>
+              <span className="text-gray-400">Ann Arbor, MI</span>
             </div>
           </div>
           <div className="flex flex-row my-4">

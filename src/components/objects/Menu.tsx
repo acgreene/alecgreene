@@ -62,7 +62,7 @@ const Menu: React.FC<MenuProps> = () => {
   };
 
   // xl screens
-  if (windowWidth >= 1700) {
+  if (windowWidth >= 1200) {
     menuStyles.height = `${scrollPos > scrollPosTrigger ? "75px" : "450px"}`;
     menuStyles.width = `${scrollPos > scrollPosTrigger ? "95px" : "384px"}`;
     menuStyles.top = "100px";
@@ -87,7 +87,7 @@ const Menu: React.FC<MenuProps> = () => {
     toggleButtonStyles.top = "60px";
     toggleButtonStyles.right = "40px";
 
-    if (windowWidth >= 1700) {
+    if (windowWidth >= 1200) {
       toggleButtonStyles.top = "175px";
       toggleButtonStyles.right = "225px";
     }
@@ -98,7 +98,7 @@ const Menu: React.FC<MenuProps> = () => {
       <div
         className="
           fixed flex bg-indigo-500 text-2xl z-50 ease-in-out duration-500
-          xl:text-6xl 
+          lg:text-6xl 
           "
         style={menuStyles}
       >
@@ -180,15 +180,15 @@ const Menu: React.FC<MenuProps> = () => {
         >
           <ul className="list-none flex flex-col w-full">
             {navLinks.map((nav, index) => (
-              <div className="w-full h-8 my-4 xl:h-20" key={nav.id}>
+              <div className="w-full h-8 my-4 lg:h-20" key={nav.id}>
                 <li
-                  className={`flex justify-start font-normal text-5xl w-full xl:justify-center xl:text-8xl
+                  className={`flex justify-start font-normal text-5xl w-full lg:justify-center lg:text-8xl
                     ${
                       index == navLinks.length - 1 ? "mr-0" : "mb-4"
                     } text-black`}
                 >
                   <div
-                    className={`items-center pr-6 hidden ease-in-out duration-200 xl:flex ${
+                    className={`items-center pr-6 hidden ease-in-out duration-200 lg:flex ${
                       hoveredMenuItemID === nav.id
                         ? "opacity-100 scale-100"
                         : "opacity-0 scale-0"
@@ -225,7 +225,7 @@ const Menu: React.FC<MenuProps> = () => {
           <div
             className="
             flex flex-col w-full justify-start pt-8 
-            xl:text-3xl xl:items-center xl:pl-16"
+            lg:text-3xl lg:items-center lg:pl-16"
           >
             <div
               className="underline py-1"
@@ -252,7 +252,7 @@ const Menu: React.FC<MenuProps> = () => {
       <div
         className="
           flex justify-center items-center w-[54px] h-[54px] fixed z-50 ease-in-out duration-500 hover:cursor-pointer
-              xl:w-[84px] xl:h-[84px]
+              lg:w-[84px] lg:h-[84px]
           "
         style={toggleButtonStyles}
         onClick={() => setToggle((prev) => !prev)}
@@ -266,17 +266,17 @@ const Menu: React.FC<MenuProps> = () => {
           className={`absolute w-[50px] h-[50px] rounded-full ease-in-out duration-300 ${
             toggle ? "bg-indigo-500" : "bg-black"
           }
-          xl:w-[78px] xl:h-[78px]
+          lg:w-[78px] lg:h-[78px]
           `}
         ></div>
         <div
-          className="flex absolute w-full h-full items-center justify-center translate-x-[-55px] ease-in-out duration-300 xl:translate-x-[-75px]"
+          className="flex absolute w-full h-full items-center justify-center translate-x-[-55px] ease-in-out duration-300 lg:translate-x-[-75px]"
           style={{
             opacity: `${scrollPos > scrollPosTrigger && !toggle ? "0" : "1"}`,
           }}
         >
           <span
-            className={`text-md font-bold xl:text-lg ${
+            className={`text-md font-bold lg:text-lg ${
               toggle ? "text-black" : "text-indigo-400"
             }`}
           >
@@ -288,7 +288,7 @@ const Menu: React.FC<MenuProps> = () => {
           alt="menu"
           className="
             absolute w-[22px] h-[22px]
-            xl:w-[32px] xl:h-[32px]
+            lg:w-[32px] lg:h-[32px]
             "
           style={{
             filter: `${

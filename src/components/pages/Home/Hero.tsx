@@ -23,7 +23,7 @@ const Hero = () => {
       >
         <div
           className="
-          text-white text-3xl w-full h-full flex relative items-center
+          text-white text-3xl w-full h-full flex flex-col relative justify-center items-start
             xxs:text-4xl
             sm:text-5xl 
             md:text-6xl 
@@ -31,13 +31,26 @@ const Hero = () => {
             xl:text-7xl xl:w-1/2
           "
         >
-          Endlessly learning, <br />
+          <div>
+            <span className="font-normal">Endlessly </span>
+            <span className="font-secondary font-thin">learning</span>
+            <span className="font-thin">,</span>
+          </div>
+
+          <div>
+            <span className="font-normal">inspired through </span>
+            <span className="font-secondary font-thin">
+              technical and creative
+            </span>
+            <span className="font-secondary font-thin"> mediums,</span>
+          </div>
+
+          <div>
+            <span className="font-normal">engineering</span>
+            <span className="font-secondary font-thin"> for </span>
+            <span className="font-secondary font-thin">work and fun.</span>
+          </div>
           <br />
-          inpired through technical and creative mediums, <br />
-          <br />
-          engineering for work, <br />
-          <br />
-          and for fun. <br />
         </div>
       </div>
     </div>

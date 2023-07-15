@@ -15,10 +15,21 @@ import Hero from "./Hero";
 import InfoCard from "../../objects/InfoCard";
 // import Spotify from "../../../spotify/Spotify";
 import DynamicMarquee from "../../objects/DynamicMarquee";
+import { useRecoilState } from "recoil";
+import { viewportWidth } from "../../../recoil/atoms";
 
 type HomeProps = {};
 
 const Home: React.FC<HomeProps> = () => {
+  const [windowWidth] = useRecoilState(viewportWidth);
+
+  let dynamicMarqueeSpeed = 0.1;
+  if (windowWidth < 1200) {
+    dynamicMarqueeSpeed = 0.15;
+  } else {
+    dynamicMarqueeSpeed = 0.075;
+  }
+
   return (
     <div className="w-full h-full sm:px-16">
       <div className="mb-24 lg:mb-40">
@@ -28,17 +39,21 @@ const Home: React.FC<HomeProps> = () => {
             className={`relative w-full items-center flex flex-row justify-center text-indigo-400`}
             style={{ transform: "rotate(-3deg)" }}
           >
-            <DynamicMarquee currentTranslation={0} speed={0.075} color={""} />
+            <DynamicMarquee
+              currentTranslation={0}
+              speed={dynamicMarqueeSpeed}
+              color={""}
+            />
             <DynamicMarquee
               currentTranslation={-100}
-              speed={0.075}
+              speed={dynamicMarqueeSpeed}
               color={""}
             />
           </div>
         </div>
       </div>
       <div className="flex justify-center items-center w-full">
-        <span className="text-white text-2xl mx-6 w-full lg:text-4xl lg:w-1/2">
+        <span className="text-white text-2xl mx-6 w-full lg:text-4xl lg:w-1/2 font-secondary">
           I offer solutions for ambitious projects in the fields of technology
           and music. I work with studios, individuals, groups, and businesses to
           bring unique concepts to life. I am available for project-based work,

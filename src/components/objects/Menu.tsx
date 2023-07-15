@@ -272,7 +272,7 @@ const Menu: React.FC<MenuProps> = () => {
         <div
           className="flex absolute w-full h-full items-center justify-center translate-x-[-55px] ease-in-out duration-300 xl:translate-x-[-75px]"
           style={{
-            opacity: `${scrollPos > scrollPosTrigger ? "0" : "1"}`,
+            opacity: `${scrollPos > scrollPosTrigger && !toggle ? "0" : "1"}`,
           }}
         >
           <span

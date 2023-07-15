@@ -12,16 +12,19 @@
 
 const Hero = () => {
   return (
-    <div className="flex flex-col justify-center items-center w-full md:flex-row h-full">
+    <div className="flex flex-col justify-center items-center w-full md:flex-row h-[100vh]">
+      {/* empty div to act as alias menu */}
+      <div className="flex relative w-[128px] h-[150px] mt-[20px] xl:hidden"></div>
       <div
         className="
-          relative flex flex-col justify-start items-center w-full h-screen pt-[150px] 
+          relative flex flex-col justify-start items-center w-full h-full
           xl:items-end
         "
       >
         <div
           className="
-          text-white text-4xl w-full h-full flex relative items-center
+          text-white text-3xl w-full h-full flex relative items-center
+            xxs:text-4xl
             sm:text-5xl 
             md:text-6xl 
             xl:text-7xl xl:w-1/2

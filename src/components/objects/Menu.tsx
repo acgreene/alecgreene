@@ -16,6 +16,9 @@ import { windowScroll, viewportWidth } from "../../recoil/atoms";
 import { useRecoilState } from "recoil";
 import { menu, close } from "../../assets";
 import { navLinks } from "../../constants";
+import { Icon } from "@chakra-ui/react";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import StaticMarquee from "./StaticMarquee";
 
 type MenuProps = {};
 
@@ -27,6 +30,19 @@ const Menu: React.FC<MenuProps> = () => {
   const [scrollPos] = useRecoilState(windowScroll);
   const [windowWidth] = useRecoilState(viewportWidth);
   const [toggle, setToggle] = useState<Boolean>(false);
+
+  // menu item arrow marquee hover states
+  const [hoveredMenuItemID, setHoveredMenuItemID] = useState<string | null>(
+    null
+  );
+
+  function handleMenuItemEnter(id: string) {
+    setHoveredMenuItemID(id);
+  }
+
+  function handleMenuItemLeave() {
+    setHoveredMenuItemID(null);
+  }
 
   const scrollPosTrigger: number = 75;
 
@@ -171,9 +187,34 @@ const Menu: React.FC<MenuProps> = () => {
                       index == navLinks.length - 1 ? "mr-0" : "mb-4"
                     } text-black`}
                 >
+                  <div
+                    className={`items-center pr-6 hidden ease-in-out duration-200 xl:flex ${
+                      hoveredMenuItemID === nav.id
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-0"
+                    }`}
+                  >
+                    <div className="flex rounded-full justify-center items-center bg-black h-[55px] w-[55px] overflow-hidden">
+                      <StaticMarquee
+                        element={
+                          <Icon
+                            as={AiOutlineArrowRight}
+                            color="white"
+                            boxSize={10}
+                            className="mx-6"
+                          ></Icon>
+                        }
+                        speed={1.1}
+                        direction={false}
+                      ></StaticMarquee>
+                    </div>
+                  </div>
+
                   <a
                     href={`#/${nav.id}`}
                     onClick={() => setToggle((prev) => !prev)}
+                    onMouseEnter={() => handleMenuItemEnter(nav.id)}
+                    onMouseLeave={handleMenuItemLeave}
                   >
                     {nav.title}
                   </a>
@@ -184,7 +225,7 @@ const Menu: React.FC<MenuProps> = () => {
           <div
             className="
             flex flex-col w-full justify-start pt-8 
-            xl:text-3xl xl:items-center"
+            xl:text-3xl xl:items-center xl:pl-16"
           >
             <div
               className="underline py-1"
@@ -210,7 +251,7 @@ const Menu: React.FC<MenuProps> = () => {
       {/* toggle button */}
       <div
         className="
-          flex justify-center items-center w-[54px] h-[54px] fixed z-50 ease-in-out duration-500
+          flex justify-center items-center w-[54px] h-[54px] fixed z-50 ease-in-out duration-500 hover:cursor-pointer
               xl:w-[84px] xl:h-[84px]
           "
         style={toggleButtonStyles}
@@ -228,6 +269,20 @@ const Menu: React.FC<MenuProps> = () => {
           xl:w-[78px] xl:h-[78px]
           `}
         ></div>
+        <div
+          className="flex absolute w-full h-full items-center justify-center translate-x-[-55px] ease-in-out duration-300 xl:translate-x-[-75px]"
+          style={{
+            opacity: `${scrollPos > scrollPosTrigger ? "0" : "1"}`,
+          }}
+        >
+          <span
+            className={`text-md font-bold xl:text-lg ${
+              toggle ? "text-black" : "text-indigo-400"
+            }`}
+          >
+            {toggle ? "Close" : "Menu"}
+          </span>
+        </div>
         <img
           src={toggle ? close : menu}
           alt="menu"

@@ -21,35 +21,42 @@ type HomeProps = {};
 const Home: React.FC<HomeProps> = () => {
   return (
     <div className="w-full h-full sm:px-16">
-      <div className="mb-24">
+      <div className="mb-24 xl:mb-40">
         <Hero />
-        <div className="relative w-full h-full flex flex-col justify-center items-center mt-24 text-white">
+        <div className="relative w-full h-full flex flex-col justify-center items-center mt-24 text-white xl:mt-32">
           <div
             className={`relative w-full items-center flex flex-row justify-center text-indigo-400`}
-            style={{ transform: "rotate(-5deg)" }}
+            style={{ transform: "rotate(-3deg)" }}
           >
-            <DynamicMarquee currentTranslation={0} speed={0.15} color={""} />
-            <DynamicMarquee currentTranslation={-100} speed={0.15} color={""} />
+            <DynamicMarquee currentTranslation={0} speed={0.075} color={""} />
+            <DynamicMarquee
+              currentTranslation={-100}
+              speed={0.075}
+              color={""}
+            />
           </div>
         </div>
       </div>
       <div className="flex justify-center items-center w-full">
-        <span className="text-white text-2xl mx-6">
+        <span className="text-white text-2xl mx-6 w-full xl:text-4xl xl:w-1/2">
           I offer solutions for ambitious projects in the fields of technology
           and music. I work with studios, individuals, groups, and businesses to
           bring unique concepts to life. I am available for project-based work,
           and if you have any requests or questions, I'm here to help.
         </span>
       </div>
-      <div className="mb-96 mt-[225px]">
+      <div className="mb-96 mt-[225px] xl:mt-[335px]">
         <div
-          className="flex relative w-full h-full items-center justify-center"
-          // style={{ transform: "translateX(-10px)" }}
+          className="
+          flex relative w-full h-full items-center justify-center mb-6 
+          xl:justify-start xl:mb-24"
         >
-          <span className="text-white text-6xl ml-8">Areas of expertise</span>
+          <span className="text-white text-6xl ml-8 xl:text-8xl">
+            Areas of expertise
+          </span>
         </div>
         <div
-          className="relative w-[93%] h-[40vh]"
+          className="relative w-[93%] h-[40vh] xl:h-[60vh]"
           style={{ transform: "translateX(5%)" }}
         >
           <div
@@ -91,7 +98,7 @@ const Home: React.FC<HomeProps> = () => {
                 "software architecture",
                 "support in audio mixing",
                 "design",
-                "startups, business ventures",
+                "business ventures",
                 "systems",
               ]}
             />

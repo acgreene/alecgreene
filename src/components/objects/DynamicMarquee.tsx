@@ -112,17 +112,21 @@ const DynamicMarquee: React.FC<DynamicMarqueeProps> = ({
 
     goForward = () => {
       this.lerp.target += this.speed;
+      this.element.style.display = "flex";
       if (this.lerp.target > this.metric) {
         this.lerp.current -= this.metric * 2;
         this.lerp.target -= this.metric * 2;
+        this.element.style.display = "none";
       }
     };
 
     goBackward = () => {
       this.lerp.target -= this.speed;
+      this.element.style.display = "flex";
       if (this.lerp.target < -1 * this.metric) {
         this.lerp.current -= -1 * this.metric * 2;
         this.lerp.target -= -1 * this.metric * 2;
+        this.element.style.display = "none";
       }
     };
 
@@ -131,9 +135,9 @@ const DynamicMarquee: React.FC<DynamicMarqueeProps> = ({
       this.direction ? this.goForward() : this.goBackward();
       this.lerpFunc(this.lerp.current, this.lerp.target, this.lerp.factor);
 
+      // skew(${this.scrollVel * 15}deg)
       if (this.element) {
-        this.element.style.transform = `translateX(${-this.lerp
-          .current}%) skew(${this.scrollVel * 15}deg)`;
+        this.element.style.transform = `translateX(${-this.lerp.current}%)`;
       }
     };
 
@@ -158,7 +162,7 @@ const DynamicMarquee: React.FC<DynamicMarqueeProps> = ({
   return (
     <div
       ref={elementRef}
-      className="text-8xl tracking-wider flex flex-row whitespace-nowrap absolute"
+      className="text-8xl tracking-wider flex flex-row whitespace-nowrap absolute ease-linear duration-[100ms] xl:text-[172px]"
     >
       <div
         className={`${color} shrink-0 w-full flex flex-row justify-center items-center`}

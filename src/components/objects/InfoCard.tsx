@@ -10,10 +10,12 @@
         * 
 */
 
-import { Icon, background } from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { BsArrowReturnRight } from "react-icons/bs";
 import { IoIosArrowBack, IoIosArrowDown } from "react-icons/io";
+import { viewportWidth } from "../../recoil/atoms";
+import { useRecoilState } from "recoil";
 
 type InfoCardProps = {
   title: string;
@@ -22,12 +24,28 @@ type InfoCardProps = {
 
 const InfoCard: React.FC<InfoCardProps> = ({ title, subtitles }) => {
   const [toggle, setToggle] = useState<Boolean>(false);
+  const [windowWidth] = useRecoilState(viewportWidth);
+
+  function handleInfoCardEnter() {
+    if (windowWidth >= 1700) {
+      setToggle(true);
+    }
+  }
+
+  function handleInfoCardLeave() {
+    if (windowWidth >= 1700) {
+      setToggle(false);
+    }
+  }
+
   return (
     <div
       className={`flex flex-col w-full my-4 justify-start items-start ${
         toggle ? "bg-indigo-400" : "bg-neutral-900"
-      } ease-out duration-300`}
+      } ease-out duration-300 h-[275px] xl:h-[375px]`}
       onClick={() => setToggle((prev) => !prev)}
+      onMouseEnter={handleInfoCardEnter}
+      onMouseLeave={handleInfoCardLeave}
       style={{
         transform: `${
           toggle
@@ -36,12 +54,11 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, subtitles }) => {
         } `,
         transformOrigin: "50% 45% -30px",
         boxShadow: "-3px -25px 53px 0px rgba(61,61,61,0.26)",
-        height: "275px",
       }}
     >
       <div className="flex flex-row items-center">
         <h1
-          className={`text-4xl my-4 ml-6 relative ${
+          className={`text-4xl my-4 ml-6 relative lg:text-6xl lg:my-8 lg:ml-12 ${
             toggle ? "text-black" : "text-indigo-500"
           }`}
         >
@@ -68,9 +85,9 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, subtitles }) => {
             key={index}
             className={`text-neutral-900 ${
               toggle ? "flex" : "display-none"
-            } ml-6 flex-col`}
+            } ml-6 flex-col lg:ml-12`}
           >
-            <div className="flex flex-row justify-start items-center text-xl">
+            <div className="flex flex-row justify-start items-center text-xl lg:text-3xl">
               <Icon as={BsArrowReturnRight} boxSize={5} className="mr-2" />
               {subtitle}
             </div>

@@ -224,7 +224,7 @@ const Menu: React.FC<MenuProps> = () => {
           </ul>
           <div
             className="
-            flex flex-col w-full justify-start pt-8 
+            flex flex-col w-full justify-start pt-8 font-secondary
             lg:text-3xl lg:items-center lg:pl-16"
           >
             <div

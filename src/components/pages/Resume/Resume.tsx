@@ -43,7 +43,7 @@ const Resume = () => {
             color="red"
             className="mr-4"
           ></Icon>
-          <span className="text-xl">PDF Download</span>
+          <span className="text-xl">PDF Copy</span>
         </div>
         <div className="absolute w-full h-full bg-blue-100 opacity-20 z-0 rounded-xl"></div>
       </div>
@@ -55,9 +55,9 @@ const Resume = () => {
             <span className="text-xl xl:text-2xl">ABOUT</span>
             <div className="my-4 ml-4">
               <span className="xl:text-2xl">
-                I am an engineer with 2 years of experience in industry, and
+                I am an engineer with 2 years of industry experience and
                 expertise in software and sound. I write full-stack web
-                applications, JUCE audio applications, and automation programs.
+                applications, JUCE audio plug-ins, and automation programs.
               </span>
             </div>
           </div>

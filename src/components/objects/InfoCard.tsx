@@ -87,7 +87,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, subtitles }) => {
               toggle ? "flex" : "display-none"
             } ml-6 flex-col lg:ml-12`}
           >
-            <div className="flex flex-row justify-start items-center text-xl lg:text-3xl">
+            <div className="flex flex-row justify-start items-center text-xl font-secondary font-light lg:text-3xl">
               <Icon as={BsArrowReturnRight} boxSize={5} className="mr-2" />
               {subtitle}
             </div>

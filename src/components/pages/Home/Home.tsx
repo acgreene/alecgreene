@@ -53,7 +53,7 @@ const Home: React.FC<HomeProps> = () => {
         </div>
       </div>
       <div className="flex justify-center items-center w-full">
-        <span className="text-white text-2xl mx-6 w-full lg:text-4xl lg:w-1/2 font-secondary">
+        <span className="text-white text-2xl mx-6 w-full lg:text-4xl lg:w-1/2 font-secondary font-light">
           I offer solutions for ambitious projects in the fields of technology
           and music. I work with studios, individuals, groups, and businesses to
           bring unique concepts to life. I am available for project-based work,

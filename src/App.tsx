@@ -27,7 +27,7 @@ function App() {
   windowStates();
   return (
     // sm:cursor-none
-    <div className="bg-black relative top-0 left-0 w-full overflow-hidden overscroll-none select-none">
+    <div className="bg-black relative top-0 left-0 w-full overflow-hidden overscroll-none select-none font-primary">
       {/* <Cursor /> */}
       <Menu />
       <div className="sm:hidden">

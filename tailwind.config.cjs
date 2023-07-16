@@ -16,10 +16,8 @@ module.exports = {
         xl: "1700px",
       },
       fontFamily: {
-        primary: ["Ubuntu", "sans-serif"], 
-        secondary: ["Open Sans", "sans-serif"],
-        lora: ["Lora", "serif"],
-        rokkitt: ["Rokkitt", "serif"]
+        primary: ["Montserrat", "sans-serif"], 
+        secondary: ["Lato", "sans-serif"],
       },
   },
   plugins: [],

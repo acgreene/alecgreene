@@ -66,7 +66,7 @@ const Home: React.FC<HomeProps> = () => {
           flex relative w-full h-full items-center justify-center mb-6 
           lg:justify-start lg:mb-24"
         >
-          <span className="text-white text-6xl ml-8 lg:text-8xl">
+          <span className="text-white text-5xl xxs:text-6xl ml-8 lg:text-8xl">
             Areas of expertise
           </span>
         </div>

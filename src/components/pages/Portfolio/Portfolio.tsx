@@ -4,7 +4,7 @@
     Author: Alec Greene
 
     About: 
-        * 
+        The parent page for all of my project portfolio items.
 
     TO DO: 
         * 
@@ -17,7 +17,7 @@ const Portfolio = () => {
   return (
     <div
       id="portfolio"
-      className="mt-10 mb-10 w-full sm:mb-20 md:mb-36 text-white"
+      className="pt-[200px] mb-10 w-full sm:mb-20 md:mb-36 text-white"
     >
       <span className="text-5xl">project portfolio</span>
       <div className="w-100 h-px mt-5 mb-5 bg-white"></div>

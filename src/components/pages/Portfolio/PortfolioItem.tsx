@@ -4,7 +4,8 @@
     Author: Alec Greene
 
     About:
-        *
+        A showcase container that holds information about a project in my portfolio.
+        Includes project title, caption, description, technologies used, and image.
 
     TO DO:
         *
@@ -14,7 +15,7 @@ import React, { useState } from "react";
 import { SiGithub } from "react-icons/si";
 import { useRecoilState } from "recoil";
 import { cursorState } from "../../../recoil/atoms";
-import { Icon, Image } from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/react";
 
 type PortfolioItemProps = {
   title: string;

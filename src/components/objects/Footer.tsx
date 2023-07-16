@@ -29,7 +29,7 @@ const Footer: React.FC<FooterProps> = () => {
             <WireframeGlobe />
           </div>
 
-          <div className="w-full h-1/3 justify-center items-start flex flex-col px-8 pb-2 text-xl lg:text-4xl lg:w-1/3">
+          <div className="w-full h-1/3 justify-center items-start flex flex-col px-8 pb-2 text-sm xxs:text-xl lg:text-4xl lg:w-1/3">
             <span className="text-center w-full">Based in Chicago.</span>
             <span className="text-center w-full">Active worldwide.</span>
           </div>

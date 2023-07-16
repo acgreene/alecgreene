@@ -58,7 +58,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, subtitles }) => {
     >
       <div className="flex flex-row items-center">
         <h1
-          className={`text-4xl my-4 ml-6 relative lg:text-6xl lg:my-8 lg:ml-12 ${
+          className={`text-3xl my-4 ml-6 relative xxs:text-4xl lg:text-6xl lg:my-8 lg:ml-12 ${
             toggle ? "text-black" : "text-indigo-500"
           }`}
         >
@@ -87,7 +87,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, subtitles }) => {
               toggle ? "flex" : "display-none"
             } ml-6 flex-col lg:ml-12`}
           >
-            <div className="flex flex-row justify-start items-center text-xl font-secondary font-light lg:text-3xl">
+            <div className="flex flex-row justify-start items-center text-md xxs:text-xl font-secondary font-light lg:text-3xl">
               <Icon as={BsArrowReturnRight} boxSize={5} className="mr-2" />
               {subtitle}
             </div>

@@ -10,7 +10,6 @@
         * 
 */
 
-// import Cursor from "./components/objects/Cursor";
 import ProgressBar from "./components/objects/ProgressBar";
 import Menu from "./components/objects/Menu";
 import Home from "./components/pages/Home/Home";
@@ -26,9 +25,7 @@ function App() {
   scrollStates();
   windowStates();
   return (
-    // sm:cursor-none
     <div className="bg-black relative top-0 left-0 w-full overflow-hidden overscroll-none select-none font-primary">
-      {/* <Cursor /> */}
       <Menu />
       <div className="sm:hidden">
         <ProgressBar />

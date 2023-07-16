@@ -36,6 +36,11 @@ const Menu: React.FC<MenuProps> = () => {
     null
   );
 
+  function handleMenuItemClick() {
+    setToggle((prev) => !prev);
+    window.scrollTo({ top: 0 });
+  }
+
   function handleMenuItemEnter(id: string) {
     setHoveredMenuItemID(id);
   }
@@ -180,12 +185,13 @@ const Menu: React.FC<MenuProps> = () => {
         >
           <ul className="list-none flex flex-col w-full">
             {navLinks.map((nav, index) => (
-              <div className="w-full h-8 my-4 lg:h-20" key={nav.id}>
+              <div className="w-full h-4 my-4 xxs:h-8 lg:h-20" key={nav.id}>
                 <li
-                  className={`flex justify-start font-normal text-5xl w-full lg:justify-center lg:text-8xl
-                    ${
-                      index == navLinks.length - 1 ? "mr-0" : "mb-4"
-                    } text-black`}
+                  className={`
+                    flex justify-start font-normal text-black text-4xl w-full 
+                    xxs:text-5xl
+                    lg:justify-center lg:text-8xl
+                    ${index == navLinks.length - 1 ? "mr-0" : "mb-4"} `}
                 >
                   <div
                     className={`items-center pr-6 hidden ease-in-out duration-200 lg:flex ${
@@ -212,7 +218,7 @@ const Menu: React.FC<MenuProps> = () => {
 
                   <a
                     href={`#/${nav.id}`}
-                    onClick={() => setToggle((prev) => !prev)}
+                    onClick={handleMenuItemClick}
                     onMouseEnter={() => handleMenuItemEnter(nav.id)}
                     onMouseLeave={handleMenuItemLeave}
                   >
@@ -224,7 +230,8 @@ const Menu: React.FC<MenuProps> = () => {
           </ul>
           <div
             className="
-            flex flex-col w-full justify-start pt-8 font-secondary
+            flex flex-col w-full justify-start pt-8 text-xl font-secondary
+            xxs:text-2xl
             lg:text-3xl lg:items-center lg:pl-16"
           >
             <div

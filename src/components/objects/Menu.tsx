@@ -112,6 +112,7 @@ const Menu: React.FC<MenuProps> = () => {
           style={{
             flexDirection: `${scrollPos > scrollPosTrigger ? "row" : "column"}`,
             display: `${toggle ? "none" : "flex"}`,
+            marginLeft: `${scrollPos > scrollPosTrigger ? "10px" : "0px"}`,
           }}
         >
           <div
@@ -128,11 +129,6 @@ const Menu: React.FC<MenuProps> = () => {
             <span
               style={{
                 fontWeight: `${scrollPos > scrollPosTrigger ? "700" : "400"}`,
-                transform: `${
-                  scrollPos > scrollPosTrigger
-                    ? "translateX(7px) translateY(0px)"
-                    : "translateX(0px) translateY(0px)"
-                }`,
               }}
             >
               a
@@ -175,10 +171,13 @@ const Menu: React.FC<MenuProps> = () => {
         {/* menu items */}
         <div
           className={`
-            flex justify-center flex-col items-center top-0 bottom-0 right-0 duration-500 ease-in-out
+            flex justify-center flex-col items-center top-0 bottom-0 right-0
             `}
           style={{
-            display: `${toggle ? "flex" : "none"}`,
+            // display: `${toggle ? "flex" : "none"}`,
+            scale: `${toggle ? "1" : "0"}`,
+            opacity: `${toggle ? "1" : "0"}`,
+            transition: "opacity 1s",
             width: "100%",
             height: "100%",
           }}

@@ -23,19 +23,49 @@ export const playlists = [
   {
     id: "01",
     title: "The Playlist",
-    description: "Ultimate 70s jazz/funk/rnb",
+    description: "Ultimate jazz/funk/rnb",
     url: "https://open.spotify.com/playlist/638Fo7W9my9FQLQvWRHi9K?si=088152b17361443f",
   },
   {
-    id: "02",
+    id: "02", 
+    title: "deep cuts",
+    description: "vintage jazz/funk/rnb",
+    url: "https://open.spotify.com/playlist/0HVnojTJbcI2KT8wnwo1qv?si=8700af86b8ea4857",
+  },
+  {
+    id: "03", 
+    title: "new cuts",
+    description: "modern jazz/funk/rnb",
+    url: "https://open.spotify.com/playlist/1tL3U8YJn4gRZx0u0OVNL7?si=49f63fb3d5c74cfb",
+  },
+  {
+    id: "04",
+    title: "high voltage funk",
+    description: "funk",
+    url: "https://open.spotify.com/playlist/6pJXnT1Far51GXO0FSMyUa?si=d4be30b0b3c84184",
+  },
+  {
+    id: "05",
+    title: "boogie nights",
+    description: "disco",
+    url: "https://open.spotify.com/playlist/3eErHcg9RewUHajhFJVWEM?si=222efc023ec749c3",
+  },
+  {
+    id: "06",
     title: "ambient",
     description: "ambient/drift/soundscape",
     url: "https://open.spotify.com/playlist/7J3AR5tWMIZavtML5Idp41?si=a8111ab38daa40cf",
   },
   {
-    id: "03",
+    id: "07",
+    title: "jazz guitar",
+    description: "jazz",
+    url: "https://open.spotify.com/playlist/4mh6cC12Eq5dVIeI5SJhtO?si=1bd1f184e5184d29",
+  },
+  {
+    id: "08",
     title: "ssbm",
-    description: "beats to play smash bros melee to",
+    description: "instrumental electronic",
     url: "https://open.spotify.com/playlist/5G7QUYhnAHMnohLvCtxuT4?si=dfd97b0bc0744a46",
   },
 ];

@@ -8,12 +8,10 @@ import { HashRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <HashRouter>
-    <React.StrictMode>
-      <RecoilRoot>
-        <ChakraProvider>
-          <App />
-        </ChakraProvider>
-      </RecoilRoot>
-    </React.StrictMode>
+    <RecoilRoot>
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
+    </RecoilRoot>
   </HashRouter>
 );

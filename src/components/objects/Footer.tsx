@@ -56,7 +56,12 @@ const Footer: React.FC<FooterProps> = () => {
       <div className="flex w-full h-2/5 border-t-2 border-indigo-500 items-center justify-center">
         <StaticMarquee
           element={
-            <div className="flex shrink-0 text-7xl font-light lg:text-[152px]">
+            <div
+              className="flex shrink-0 text-7xl font-light lg:text-[152px]"
+              onClick={() =>
+                (window.location.href = "mailto:aleccgreene@gmail.com")
+              }
+            >
               <div className="px-2">
                 <span className="px-1">aleccgreene@gmail.com</span>
               </div>

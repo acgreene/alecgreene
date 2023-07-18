@@ -4,9 +4,6 @@ import arrowUp from "./arrow-up.svg";
 import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
-import IMG_0001 from "./photos/IMG_0001.png";
-import IMG_0002 from "./photos/IMG_0002.png";
-import IMG_0003 from "./photos/IMG_0003.png";
 import IMG_4316 from "./photos/IMG_4316.png";
 import headshot from "./photos/alecgreene_headshot.jpg";
 import headshot_cropped from "./photos/alecgreene_headshot_cropped.png";
@@ -26,9 +23,16 @@ import cubase from "./cubase.png";
 import logicpro from "./logicpro.png";
 import kicad from "./kicad.png";
 import ruckusEQ from "./photos/ruckusEQ.png";
-import geomixer from "./photos/geomixer.png";
 import redditClone from "./photos/redditClone.png";
 import noise from "./noise.gif"
+
+import times_square from "./photos/times_square.png";
+import ruckus_live from "./photos/ruckus_live.png";
+import nyc_hannah from "./photos/nyc_hannah.png";
+import ruckus_greenwood from "./photos/ruckus_greenwood.png"
+import ruckus_greenwood_bw from "./photos/ruckus_greenwood_bw.jpg"
+import ruckus_lutherween from "./photos/ruckus_lutherween.jpeg"
+import diag_bw_1 from "./photos/diag_bw_1.jpeg"
 
 export {
   menu,
@@ -37,9 +41,6 @@ export {
   instagram,
   linkedin,
   twitter,
-  IMG_0001, 
-  IMG_0002, 
-  IMG_0003,
   IMG_4316,
   headshot,
   headshot_cropped,
@@ -59,7 +60,13 @@ export {
   logicpro,
   kicad,
   ruckusEQ,
-  geomixer,
   redditClone,
   noise,
+  times_square, 
+  ruckus_live, 
+  nyc_hannah,
+  ruckus_greenwood,
+  ruckus_greenwood_bw,
+  ruckus_lutherween,
+  diag_bw_1,
 };

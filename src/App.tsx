@@ -25,7 +25,7 @@ function App() {
   scrollStates();
   windowStates();
   return (
-    <div className="bg-black relative top-0 left-0 w-full overflow-hidden overscroll-none select-none font-primary">
+    <div className="bg-black relative top-0 left-0 w-full overflow-hidden overscroll-none select-none font-primary lowercase">
       <Menu />
       <div className="sm:hidden">
         <ProgressBar />

@@ -20,6 +20,8 @@ import Footer from "./components/objects/Footer";
 import { Route, Routes } from "react-router-dom";
 import { scrollStates } from "./recoil/scrollStates";
 import { windowStates } from "./recoil/windowStates";
+import AnimatedSquare from "./components/objects/AnimatedSquare";
+import { squares } from "./constants";
 
 function App() {
   scrollStates();
@@ -61,6 +63,26 @@ function App() {
             element={
               <div>
                 <Blog />
+              </div>
+            }
+          ></Route>
+          <Route
+            path="/sketch"
+            element={
+              <div className="h-[800vh]">
+                {squares.map((square, index) => (
+                  <AnimatedSquare
+                    key={index}
+                    rgb={square.rgb}
+                    opacity={square.opacity}
+                    size={square.size}
+                    rotationConstant={square.rotationConstant}
+                    translationXConstant={square.translationXConstant}
+                    translationYConstant={square.translationYConstant}
+                    top={square.top}
+                    left={square.left}
+                  ></AnimatedSquare>
+                ))}
               </div>
             }
           ></Route>

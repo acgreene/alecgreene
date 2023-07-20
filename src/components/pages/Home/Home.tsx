@@ -46,19 +46,6 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <div className="w-full h-full sm:px-16">
-      {squares.map((square, index) => (
-        <AnimatedSquare
-          key={index}
-          rgb={square.rgb}
-          opacity={square.opacity}
-          size={square.size}
-          rotationConstant={square.rotationConstant}
-          translationXConstant={square.translationXConstant}
-          translationYConstant={square.translationYConstant}
-          top={square.top}
-          left={square.left}
-        ></AnimatedSquare>
-      ))}
       <div className="mb-24 lg:mb-40">
         <Hero />
         <div className="relative w-full h-full flex flex-col justify-center items-center mt-24 text-white lg:mt-32">

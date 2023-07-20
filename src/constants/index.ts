@@ -180,18 +180,18 @@ function getRandomMinusOneOrOne() {
 }
 
 export const squares: animatedSquareProperties[] = [];
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 100; i++) {
   let randomlyNegative = getRandomMinusOneOrOne();
   
   let properties: animatedSquareProperties = {
     rgb: `rgb(224 231 255)`,
-    opacity: 0.02 + (Math.random() * 0.3),
-    size: 0.5*Math.random(),
+    opacity: 0.1 + (Math.random() * 1),
+    size: 1.5*Math.random(),
     rotationConstant: Math.random()*randomlyNegative*0,
     translationXConstant: 0.025,
-    translationYConstant: -1*(0.5+Math.random()*0.3),
-    top: Math.random()*350,
-    left: Math.random()*85,
+    translationYConstant: -1*(0.5+Math.random()*0.5),
+    top: Math.random()*800,
+    left: Math.random()*100,
   }
   squares.push(properties);
 }

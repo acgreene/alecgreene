@@ -18,8 +18,8 @@ type FooterProps = {};
 
 const Footer: React.FC<FooterProps> = () => {
   return (
-    <div className="flex flex-col w-full h-[600px] text-indigo-500 text-lg">
-      <div className="flex flex-row w-full h-2/5 border-t-2 border-indigo-500">
+    <div className="flex flex-col w-full h-[600px] text-indigo-500 text-lg z-30">
+      <div className="flex flex-row w-full h-2/5 border-t-2 border-indigo-500 bg-black z-30">
         <div
           className="
           flex flex-col w-2/3 h-full 
@@ -53,7 +53,7 @@ const Footer: React.FC<FooterProps> = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full h-2/5 border-t-2 border-indigo-500 items-center justify-center">
+      <div className="flex w-full h-2/5 border-t-2 border-indigo-500 items-center justify-center bg-black z-30">
         <StaticMarquee
           element={
             <div
@@ -71,7 +71,7 @@ const Footer: React.FC<FooterProps> = () => {
           direction={true}
         ></StaticMarquee>
       </div>
-      <div className="flex w-full h-1/5 items-center justify-center border-t-2 border-indigo-500 text-xl lg:text-2xl">
+      <div className="flex w-full h-1/5 items-center justify-center border-t-2 border-indigo-500 bg-black z-30 text-xl lg:text-2xl">
         2023 © Alec Greene
       </div>
     </div>

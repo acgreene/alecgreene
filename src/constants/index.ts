@@ -163,3 +163,35 @@ export const explorations = [
   },  
   
 ];
+
+interface animatedSquareProperties {
+  rgb: string;
+  opacity: number;
+  size: number;
+  rotationConstant: number;
+  translationXConstant: number;
+  translationYConstant: number;
+  top: number;
+  left: number;
+}
+
+function getRandomMinusOneOrOne() {
+  return Math.random() < 0.5 ? -1 : 1;
+}
+
+export const squares: animatedSquareProperties[] = [];
+for (let i = 0; i < 50; i++) {
+  let randomlyNegative = getRandomMinusOneOrOne();
+  
+  let properties: animatedSquareProperties = {
+    rgb: `rgb(224 231 255)`,
+    opacity: 0.02 + (Math.random() * 0.3),
+    size: 0.5*Math.random(),
+    rotationConstant: Math.random()*randomlyNegative*0,
+    translationXConstant: 0.025,
+    translationYConstant: -1*(0.5+Math.random()*0.3),
+    top: Math.random()*350,
+    left: Math.random()*85,
+  }
+  squares.push(properties);
+}

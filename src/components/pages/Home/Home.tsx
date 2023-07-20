@@ -29,7 +29,8 @@ import {
   times_square,
 } from "../../../assets";
 // import Spotify from "../../../spotify/Spotify";
-import { playlists } from "../../../constants";
+import { playlists, squares } from "../../../constants";
+import AnimatedSquare from "../../objects/AnimatedSquare";
 
 type HomeProps = {};
 
@@ -45,6 +46,19 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <div className="w-full h-full sm:px-16">
+      {squares.map((square, index) => (
+        <AnimatedSquare
+          key={index}
+          rgb={square.rgb}
+          opacity={square.opacity}
+          size={square.size}
+          rotationConstant={square.rotationConstant}
+          translationXConstant={square.translationXConstant}
+          translationYConstant={square.translationYConstant}
+          top={square.top}
+          left={square.left}
+        ></AnimatedSquare>
+      ))}
       <div className="mb-24 lg:mb-40">
         <Hero />
         <div className="relative w-full h-full flex flex-col justify-center items-center mt-24 text-white lg:mt-32">
@@ -65,9 +79,9 @@ const Home: React.FC<HomeProps> = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center w-full">
+      <div className="flex justify-center items-center w-full z-10">
         <span
-          className="text-white text-2xl mx-6 w-full lg:text-4xl lg:w-1/2 font-secondary font-light"
+          className="text-white text-2xl mx-6 w-full lg:text-4xl lg:w-1/2 font-secondary font-light z-10"
           style={{ textTransform: "none" }}
         >
           I work with studios, individuals, groups, and businesses to bring
@@ -172,14 +186,14 @@ const Home: React.FC<HomeProps> = () => {
         direction={true}
       ></StaticMarquee>
 
-      <div className="w-full mb-[180px] text-white">
-        <div className="ml-8 mb-8 lg:mb-20">
+      <div className="flex flex-col w-full mb-[180px] text-white z-10">
+        <div className="ml-8 mb-8 lg:mb-20 z-10">
           <span className="text-white text-5xl xxs:text-6xl lg:text-8xl">
             Grab a playlist
           </span>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col z-10">
           {playlists.map((playlist) => (
             <div
               className="flex flex-row pt-2 pb-2 lg:p-4 rounded-lg hover:cursor-pointer lg:hover:bg-indigo-400 lg:hover:text-black"

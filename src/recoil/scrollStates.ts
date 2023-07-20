@@ -13,13 +13,15 @@
 
 import { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { windowScroll, windowScrollVelocity, maxScroll } from "./atoms";
+import { windowScroll, windowScrollVelocity, maxScroll, windowScrollCenterY, viewportHeight } from "./atoms";
 
 export function scrollStates(): void {
     // recoil
     const [scrollPos, setScrollPos] = useRecoilState(windowScroll);
     const [scrollVel, setScrollVel] = useRecoilState(windowScrollVelocity);
     const [maxScrollY, setMaxScrollY] = useRecoilState(maxScroll);
+    const [windowHeight, setWindowHeight] = useRecoilState(viewportHeight);
+    const [centerY, setCenterY] = useRecoilState(windowScrollCenterY);
 
     // local states
     const [lastScrollTime, setLastScrollTime] = useState<number>(Date.now());
@@ -45,6 +47,7 @@ export function scrollStates(): void {
         if (window.scrollY === 0 || window.scrollY > newMaxScrollY - 100) {
         setScrollVel(0);
         }
+        setCenterY(scrollPos + (windowHeight/2));
     }
     window.addEventListener("scroll", handleScroll);
     return () => {

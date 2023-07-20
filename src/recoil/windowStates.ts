@@ -4,8 +4,8 @@
     Author: Alec Greene
 
     About: 
-        Performs calculations for and sets the global recoil states scrollPos, 
-        maxScrollY, and scrollVel.
+        Performs calculations for and sets the global recoil states 
+        viewportHeight, viewportWidth, and windowScrollCenterY.
 
     TO DO: 
         * 
@@ -13,13 +13,13 @@
 
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { viewportHeight, viewportWidth } from "./atoms";
+import { viewportHeight, viewportWidth, windowScrollCenterY, maxScroll, windowScroll } from "./atoms";
 
 export function windowStates(): void {
     // recoil
     const [windowWidth, setwindowWidth] = useRecoilState(viewportWidth);
     const [windowHeight, setWindowHeight] = useRecoilState(viewportHeight);
-
+    
     useEffect(() => {
         function handleWindowResize(): void {
             setwindowWidth(window.innerWidth || document.documentElement.clientWidth);

@@ -46,3 +46,8 @@ export const viewportHeight = atom({
   key: "viewportHeight",
   default: window.innerHeight,
 })
+
+export const windowScrollCenterY = atom ({
+  key: "windowScrollCenterY",
+  default: window.innerHeight / 2,
+})

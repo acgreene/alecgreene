@@ -70,10 +70,10 @@ const Home: React.FC<HomeProps> = () => {
           className="text-white text-2xl mx-6 w-full lg:text-4xl lg:w-1/2 font-secondary font-light"
           style={{ textTransform: "none" }}
         >
-          I offer solutions for ambitious projects in the fields of technology
-          and music. I work with studios, individuals, groups, and businesses to
-          bring unique concepts to life. I am available for project-based work,
-          and if you have any requests or questions, I'm here to help.
+          I work with studios, individuals, groups, and businesses to bring
+          unique concepts in sound and software to life. I am available for
+          project-based work, and if you have any requests or questions, I'm
+          here to help.
         </span>
       </div>
       <div className="mb-[344px] mt-[225px] lg:mt-[335px]">
@@ -182,7 +182,7 @@ const Home: React.FC<HomeProps> = () => {
         <div className="flex flex-col">
           {playlists.map((playlist) => (
             <div
-              className="flex flex-row pt-2 pb-2 lg:p-4 rounded-lg hover:cursor-pointer hover:bg-indigo-400 hover:text-black"
+              className="flex flex-row pt-2 pb-2 lg:p-4 rounded-lg hover:cursor-pointer lg:hover:bg-indigo-400 lg:hover:text-black"
               key={playlist.id}
               onClick={() => (window.location.href = playlist.url)}
             >
